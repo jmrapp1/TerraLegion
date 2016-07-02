@@ -1,0 +1,97 @@
+n n n
+n c c
+n c c
+
+  0      1       2
+(n, n) (0, 1) (1, 1) 2
+(n, n) (0, 0) (1, 0) 1
+(n, n) (n, n) (n, n) 0
+
+x   x   x   x   x   x   907
+x   x   x   x   x   x   906
+x   x   p   p   x   x   905
+x   x   p   p   x   x   904
+x   x   x   x   x   x   903
+x   x   x   x   x   x   902
+51  52  53  54  55  56
+
+pos: 1000, 1100
+
+-Hills should be generated in the first top chunks. The chunks below should generate caves, ores, etc
+-Generation should only happen for the chunks that havent been loaded. When a chunk is unloaded it should be queued.
+-When new chunks are loaded the terrain should be generated
+
+Perlin noise gives a value between -1 and 1
+Based off of this:
+       -1 is at y = 0
+	0 is at y = 24
+	1 is at y = 49
+25 values inbetween 0 and 1 and -1 and 0
+Algorithm: (i * 25) + 24 to get y tile position
+
+Chunk saving should only save the chunks that have been modified.
+Would it be more efficient to save the entire chunk (50x50) to a chunk file or save the edits made within a chunk.
+The second option would mean that the generation function would need to be performed with the edits changed while generating.
+
+The saves will be split into separate files all contained within a folder.
+The folder will be named the name of the world
+Folder Structure:
+
+	Folder:
+		world.save
+		chunk<x>_<y>.save
+		chunk<x2>_<y2>.save
+		...
+When a world is loaded it will search for the folders and then when a world is selected it will load in all chunks and queue them
+
+The world.save file will contain the name, the seed, the player location, player stats, etc
+The chunk files will contain the data compressed on the following lines
+Each line represents the next row
+Compression method may be RLE (run length encoding) 
+
+Lighting needs to crawl in every direction recursively
+As it gets to blocks the lighting in that direction should diminish until it is 0
+If a block doesnt exist in the tested direction it should drop the light value down a little bit
+
+"Sun Lighting"
+At start of game, find the highest point in each column. Save the row in one dimensional array the size of the chunk. This holds the highest
+y value tile. That way when the sun changes it only has to go through each loaded chunk's light value and set it to the sun's light value.
+When a tile is put above the highest, update it in the array
+
+-When setting a tile high above the top tile, the sun from the original high tile will still be lit up
+-When a new block is set above the high tile, go to the original high tile and remove the lighting.
+-What if there is a torch where the original high tile is
+-Create method that undoes light based on the same algorithm it uses to set light. It will crawl along unsetting the 
+amount of light that it originally set. This will make it so that lights around it will still influence it
+
+Highest values will be near center of the torch. We want to remove the amount of the light that was originally created there.
+A light value is only set if the current light value is less than the value to be set. So if the light value is > what it
+should be calculated to be, then skip it.
+
+If another light created a higher light level next to the other light then when it is removed it wont take the other lights
+light value into account and will just write over it. 
+	-Each light can have it's own lightMap associated with it.
+	-Recalculate the light when a light source is removed
+	-Don't want to constantly update the light sources because that will cause lag
+	-Recalculate all light sources in chunk when removed. Too inefficient
+	-Gather all lights in the surrounding area that touch the light source
+		-How to efficiently save the light bounds though and update when blocks are removed/placed
+		-If light is different value, queue it to go through algorithm after the lights extinguished
+
+
+Need to go through process of lighting and see if the lighting matches up with what is currently there. If it doesn't then
+it means a different light source is lighting it and that light should be recalculated after we are done extinguishing the
+light source. 
+
+*** Problem: Multiple iterations will go to the same tile. Sometimes the lightValue will be 0 and it will add it to the queue
+but then later on another iteration will go to that tile with the same equal lightValue and change it correctly.
+
+Problem: If the light placed overtakes all light in the area it disrupted then any other lights would be on the lighted areas
+edge. After the lightValue gets to 0, each iteration must go through 1 more time before ending.
+
+Four types of basic tools
+1. Pickaxe - Breaks rocks
+2. Axe - Breaks wooden structures (trees, wood planks, etc)
+3. Sword - Can’t not break any blocks. Used strictly for attacking
+4. Hammer - Breaks walls (background tiles)
+
