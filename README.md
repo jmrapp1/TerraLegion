@@ -16,8 +16,11 @@ When adding your own features to the game or modifying existing code, there are 
 - **Item System**: Pick up and use items or blocks. Blocks will be placed on the ground and items, if they're tools, will destroy the environment
 - **Entity System**: Implement custom AI and entities with the entity system that is in place.
 
-### TODO
-- 
+### Being Worked On
+
+Nothing is being worked on currently.
+
+\* ***If you are working on a new feature and plan on completing it, please request for me to add the feature to this list.*** \*
 
 ### Known Issues
 - **Lighting [Difficult]**: The lighting system has been one of the toughest systems to implement as it has to be **very** efficient and **very** dynamic. As of right now placing a single light source and then removing the light source sets and removes the light values correctly. The problems arise when clumping light sources around eachother. The light values are added correctly, but when removing the light sources it doesn't remove all of the light that it should. The algorithm is a recursive algorithm and may take time to trace through and actually understand. 
