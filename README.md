@@ -9,6 +9,19 @@ When adding your own features to the game or modifying existing code, there are 
 3. If your additions add a new utility or module to the game, be sure to add a separate testing application to the "test" package of the code. This application should simply provide test cases, showing the functions of your new additions. For example, you can find the [InventoryTest Application](https://github.com/baseball435/Terraria-Clone/blob/master/core/src/com/jmr/terraria/test/InventoryTest.java) which simply tests different methods of the inventory class. You can also find the [Noise Visualization Utility](https://github.com/baseball435/Terraria-Clone/blob/master/core/src/com/jmr/terraria/test/NoiseVisualizationScreen.java) which allows you to test and visualize the outcomes of Simplex Noise.  
 
 ### Current Features
+- **World Generation**: Over 1,500,000 blocks in the world.
+- **Lighting System**: Efficient with almost no boundaries when placing light sources.
+- **World Saving**: The world is split into chunks and saved to the device. It can then be loaded again.
+- **World Destruction**: Break blocks using the different tools. The action joystick will place or break blocks within a certain radius dependent on the item you have in your hand.
+- **Item System**: Pick up and use items or blocks. Blocks will be placed on the ground and items, if they're tools, will destroy the environment
+- **Entity System**: Implement custom AI and entities with the entity system that is in place.
+
+### TODO
+- 
+
+### Known Issues
+- /[Difficult/]**Lighting**: The lighting system has been one of the toughest systems to implement as it has to be **very** efficient and **very** dynamic. As of right now placing a single light source and then removing the light source sets and removes the light values correctly. The problems arise when clumping light sources around eachother. The light values are added correctly, but when removing the light sources 
+- /[Easy/]**Crafting**: The design of the crafting screen that I have in my head is for the crafting recipes to be sorted in categories based on the type of item they are. So separation of tools, weapons, miscellaneous, etc. As of right now it is sorting them in separate categories, but it is not checking if you have the required items to actually craft it. When selecting the craft option it just gives the player the item. 
 
 ### Installation & Building
 1. Fork the repository and create your own branch.
