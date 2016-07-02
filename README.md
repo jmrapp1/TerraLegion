@@ -11,5 +11,16 @@ When adding your own features to the game or modifying existing code, there are 
 ### Current Features
 
 ### Installation & Building
+1. Fork the repository and create your own branch.
+2. Using Android Studio, open an existing project and navigate to the directory where your branch is stored. Select build.gradle and open the project from that file.
+3. From the top menu, select *Run->Edit Configurations*. We need to add a new run configuration to allow you to run the game on your desktop/laptop.
+4. Select the *+* button and then choose *Application* from the drop down menu.
+5. Enter a name for the configuration at the top. 
+6. For the *Main Class* setting, press the browse button and select the *DesktopLauncher* class.
+7. For the *Working Directory* setting, press the browse button and navigate to and select the directory *<your branch>/android/assets/*
+8. For the *Use Classpath of Module* setting, select the *desktop* project from the drop down menu.
+9. Apply the changes and press *OK*. 
+10. You should now be able to run the game from Desktop and Android using the two run configurations.
+
 
 ### License
