@@ -18,7 +18,7 @@ When adding your own features to the game or modifying existing code, there are 
 
 ### Being Worked On
 
-Nothing is being worked on currently.
+- Documentation of all existing code
 
 \* *If you are working on a new feature and plan on completing it, please request to add the feature to this list.* \*
 
