@@ -169,10 +169,14 @@ public class InventoryScreen implements Screen {
 						if (!inventory.isFull()) {
 							com.jmr.terraria.game.item.ItemStack itemStack = selectedInventoryBox.getItemStack();
 							if (itemStack.getStack() > 1) {
-								int stack1 = (int) Math.ceil(itemStack.getStack() / 2);
-								int stack2 = stack1;
-								if (stack1 * 2 > itemStack.getStack())
-									stack2 = itemStack.getStack() - stack1;
+								int stack1, stack2;
+								if(itemStack.getStack() % 2 == 0) {
+                                    stack1 = itemStack.getStack()/2;
+									stack2 = stack1;
+								} else {
+									stack1 = itemStack.getStack()/2;
+									stack2 = stack1 + 1;
+								}
 								itemStack.setStack(stack1);
 
 								ItemStack itemStack2 = ItemStack.getItemStack(itemStack.getItem(), stack2);
