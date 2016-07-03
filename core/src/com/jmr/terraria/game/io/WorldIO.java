@@ -162,7 +162,8 @@ public class WorldIO {
 					int id = Integer.parseInt(data[0]);
 					int count = Integer.parseInt(data[1]);
 					for (int k = 0; k < count; k++) {
-						chunk.setBlock(BlockType.values()[id], xOffset + k, i, false); //Set the block and call any place events (this will automatically set light values for example)
+						BlockType type = BlockType.getBlockType(id);
+						chunk.setBlock(type, xOffset + k, i, false); //Set the block and call any place events (this will automatically set light values for example)
 					}
 					xOffset += count;
 				}
@@ -176,7 +177,8 @@ public class WorldIO {
 					int id = Integer.parseInt(data[0]);
 					int count = Integer.parseInt(data[1]);
 					for (int k = 0; k < count; k++) {
-						chunk.setWall(BlockType.values()[id], xOffset + k, i, false); //Set the block and call any place events (this will automatically set light values for example)
+						BlockType type = BlockType.getBlockType(id);
+						chunk.setWall(type, xOffset + k, i, false); //Set the block and call any place events (this will automatically set light values for example)
 					}
 					xOffset += count;
 				}

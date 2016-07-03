@@ -7,12 +7,20 @@ public enum BlockType {
 	
 	private final int id;
 	
-	private BlockType(int id) {
+    BlockType(int id) {
         this.id = id;
     }
 
     public int getId() {
         return id;
     }
-    
+
+    public static BlockType getBlockType(int id) {
+        for (BlockType type : values()) {
+            if (type.getId() == id)
+                return type;
+        }
+        return AIR;
+    }
+
 }

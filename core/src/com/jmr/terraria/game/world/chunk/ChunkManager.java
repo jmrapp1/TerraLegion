@@ -72,27 +72,23 @@ public class ChunkManager {
 	}
 	
 	private void generateChunk(final Chunk chunk) {
-		Runnable runnable = new Runnable() {
+		// <TODO When running in a thread, for some reason the lighting doesn't generate correctly. Must be some type of race condition>
+		/*Runnable runnable = new Runnable() {
 			@Override
-			public void run() {
-				if(chunk.getStartY()==CHUNKS_Y-1) { //If it is the top chunk where the hills should be generated
+			public void run() {*/
+				if(chunk.getStartY() == CHUNKS_Y - 1) { //If it is the top chunk where the hills should be generated
 					hillGenerator.generate(noise, chunk);
 				} else {
 					oreGenerator.generate(noise, chunk);
 				}
-				//WorldIO.saveChunk(world.getWorldName(),chunk);
-				chunk.setGenerated(true);
 				totalChunksLoaded += 1;
+				chunk.setGenerated(true);
+				initializeChunk(chunk);
 
-				chunk.loadBlockProperties();
-
-				if (chunk.isTopChunk() && !chunk.isHighestTilesFound()) { //Used to calculate the sun's lighting
-					chunk.findHighestTiles();
-					chunk.calculateSun();
-				}
-			}
+				//WorldIO.saveChunk(world.getWorldName(),chunk);
+			/*}
 		};
-		ThreadManager.getInstance().runThread(runnable);
+		ThreadManager.getInstance().runThread(runnable);*/
 	}
 	
 	public void updateChunks(PhysicsWorld world, float centerX, float centerY) {
@@ -132,23 +128,26 @@ public class ChunkManager {
 	private Chunk getAndLoadChunk(int x, int y) {
 		if (x < CHUNKS_X && x >= 0 && y >= 0 && y < CHUNKS_Y) {
 			Chunk chunk = chunks[x][y];
-
-			if (!chunk.isGenerated()) {
-				generateChunk(chunk);
-				System.out.println("Generated");
-			}
-			/*if (chunk != null && !chunk.blockPropertiesLoaded()) { //this will generate the lights and such
-				chunk.loadBlockProperties();
-				System.out.println("Loaded properties");
-			}
-			brb
-			if (chunk.isTopChunk() && !chunk.isHighestTilesFound()) { //Used to calculate the sun's lighting
-				chunk.findHighestTiles();
-				chunk.calculateSun();
-			}*/
+			initializeChunk(chunk);
 			return chunk;
 		}
 		return null;
+	}
+
+	private void initializeChunk(Chunk chunk) {
+		if (!chunk.isGenerated()) {
+			generateChunk(chunk);
+			System.out.println("Generated");
+		}
+		if (chunk != null && !chunk.blockPropertiesLoaded()) { //this will generate the lights and such
+			chunk.loadBlockProperties();
+			System.out.println("Loaded properties");
+		}
+
+		if (chunk.getStartY() == CHUNKS_Y - 1 && !chunk.isHighestTilesFound()) { //Used to calculate the sun's lighting
+			chunk.findHighestTiles();
+			chunk.calculateSun();
+		}
 	}
 
 	public void renderOnScreen(SpriteBatch sb, OrthoCamera camera, float centerX, float centerY) {
