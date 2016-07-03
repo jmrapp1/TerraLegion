@@ -22,11 +22,6 @@ When adding your own features to the game or modifying existing code, there are 
 
 \* *If you are working on a new feature and plan on completing it, please request to add the feature to this list.* \*
 
-### Known Issues
-- **Lighting [Difficult]**: The lighting system has been one of the toughest systems to implement as it has to be **very** efficient and **very** dynamic. As of right now placing a single light source and then removing the light source sets and removes the light values correctly. The problems arise when clumping light sources around eachother. The light values are added correctly, but when removing the light sources it doesn't remove all of the light that it should. The algorithm is a recursive algorithm and may take time to trace through and actually understand. 
-- **Crafting [Easy]**: The design of the crafting screen that I have in my head is for the crafting recipes to be sorted in categories based on the type of item they are. So separation of tools, weapons, miscellaneous, etc. As of right now it is sorting them in separate categories, but it is not checking if you have the required items to actually craft it. When selecting the craft option it just gives the player the item. 
-- **Blocks Placed In Entities [Medium Difficulty]**: Blocks are able to be placed on top of entities. This specific (issue was submitted by AppPhil)[https://github.com/baseball435/Terraria-Clone/issues/2] when he was able to place a block ontop of a buny.
-
 ### Installation & Building
 1. Fork the repository and create your own branch.
 2. Using Android Studio, open an existing project and navigate to the directory where your branch is stored. Select build.gradle and open the project from that file.
