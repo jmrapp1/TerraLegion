@@ -17,6 +17,7 @@ import com.jmr.terraria.engine.views.drawables.Drawable;
 import com.jmr.terraria.engine.views.drawables.ResourceManager;
 import com.jmr.terraria.engine.views.drawables.ui.PictureButton;
 import com.jmr.terraria.engine.views.screens.ScreenManager;
+import com.jmr.terraria.game.world.block.BlockManager;
 import com.jmr.terraria.game.world.block.BlockType;
 import com.jmr.terraria.game.world.chunk.Chunk;
 import com.jmr.terraria.game.world.chunk.ChunkManager;
@@ -159,6 +160,11 @@ public class GameHud {
                                     if (!world.getPlayer().getBounds().overlaps(collisionTestRect)) {
                                         world.getChunkManager().setBlock(((BlockItem) selectedItemStack.getItem()).getBlockType(), touchX, touchY, true);
                                         world.getPlayer().getInventory().removeItemStack(selectedItemStack.getItem(), 1);
+                                    } else {
+                                        if(!BlockManager.getBlock(((BlockItem) selectedItemStack.getItem()).getBlockType()).collides()) {
+                                            world.getChunkManager().setBlock(((BlockItem) selectedItemStack.getItem()).getBlockType(), touchX, touchY, true);
+                                            world.getPlayer().getInventory().removeItemStack(selectedItemStack.getItem(), 1);
+                                        }
                                     }
                                 }
                             }
