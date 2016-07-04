@@ -160,6 +160,11 @@ public class GameHud {
                                     if (!world.getPlayer().getBounds().overlaps(collisionTestRect) || !BlockManager.getBlock(((BlockItem) selectedItemStack.getItem()).getBlockType()).collides()) {
                                         world.getChunkManager().setBlock(((BlockItem) selectedItemStack.getItem()).getBlockType(), touchX, touchY, true);
                                         world.getPlayer().getInventory().removeItemStack(selectedItemStack.getItem(), 1);
+                                    } else {
+                                        if(!BlockManager.getBlock(((BlockItem) selectedItemStack.getItem()).getBlockType()).collides()) {
+                                            world.getChunkManager().setBlock(((BlockItem) selectedItemStack.getItem()).getBlockType(), touchX, touchY, true);
+                                            world.getPlayer().getInventory().removeItemStack(selectedItemStack.getItem(), 1);
+                                        }
                                     }
                                 }
                             }

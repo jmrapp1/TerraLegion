@@ -22,6 +22,7 @@ public class GameScreen implements Screen {
 	
 	public GameScreen(String worldFileName) {
 		world = new World(worldFileName);
+		world.getPlayer().getInventory().load();
 	}
 	
 	public GameScreen(String worldFileName, long seed) {
@@ -52,6 +53,7 @@ public class GameScreen implements Screen {
 		if (Gdx.input.isKeyJustPressed(Keys.I)) {
 			System.out.println("Saving");
 			WorldIO.saveWorld(world);
+			world.getPlayer().getInventory().save();
 		}
 
 		world.update(camera);
@@ -87,12 +89,14 @@ public class GameScreen implements Screen {
 	@Override
 	public void onBackPressed() {
 		WorldIO.saveWorld(world);
+		world.getPlayer().getInventory().save();
 		Timer.stopGameTime();
 	}
 
 	@Override
 	public void pause() {
 		WorldIO.saveWorld(world);
+		world.getPlayer().getInventory().save();
 		Timer.stopGameTime();
 	}
 
