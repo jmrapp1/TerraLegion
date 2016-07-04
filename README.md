@@ -20,7 +20,6 @@ When adding your own features to the game or modifying existing code, there are 
 
 - **Issues:** Working on [opened issues](https://github.com/baseball435/Terraria-Clone/issues) is the first thing I'd recommend trying out before going on to add your own content. It will give you a bit of a feel for the code and make adding content a little bit smoother later on.
 - **Inventory Block:** In Minecraft and Terraria having a place to put your items is very important. We will need to create a new Block type called an *InventoryBlock*. This should be an abstract class that extends the *Block* class. It should contain an *Inventory* instance and provide getter/setter methods for it. From this other classes should extend upon it. For example, a *Chest* class can be created that extends the *InventoryBlock* and allows interaction by tapping on it (for now). When it is tapped on, it should open the *InventoryScreen* and display the contents of the inventory. At some point an extension of the *InventoryScreen* class will need to be made to show the Player's inventory along with the inventory of the chest.
-- 
 
 ### Installation & Building
 1. Fork the repository and create your own branch.
