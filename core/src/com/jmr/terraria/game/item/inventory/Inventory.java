@@ -1,7 +1,12 @@
 package com.jmr.terraria.game.item.inventory;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.jmr.terraria.game.item.Item;
+import com.jmr.terraria.game.item.ItemManager;
+import com.jmr.terraria.game.item.ItemStack;
 import com.jmr.terraria.game.utils.Tuple;
+import java.io.IOException;
 
 /**
  * Created by Jon on 10/1/15.
@@ -250,6 +255,56 @@ public class Inventory {
 
 	public int getHeight() {
 		return height;
+	}
+
+	public void save() {
+		try {
+			FileHandle handle = Gdx.files.external("inventory.save");
+			if(handle.exists()) {
+				handle.delete();
+			}
+			handle.file().createNewFile();
+
+            for(int i = 0; i < width; i++) {
+				for(int w = 0; w < height; w++) {
+					ItemStack itemStack = inventory[i][w];
+					if(itemStack != null) {
+						Item item = itemStack.getItem();
+						int stack = itemStack.getStack();
+						int itemId = item.getTypeId();
+						handle.writeString("{" + i + ";" + w + ";" + itemId + ";" + stack + "} ", true);
+					}
+				}
+			}
+			System.out.println("Inventory saved.");
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	public void load() {
+        try {
+			FileHandle handle = Gdx.files.external("inventory.save");
+			if(handle.exists()) {
+                String content = handle.readString();
+				if(content.equals("")) return;
+				String[] itemStacks = content.split(" ");
+				for(int i = 0; i < itemStacks.length; i++) {
+					String itemStackContent = itemStacks[i].split("\\{")[1].split("}")[0];
+					String itemStackParts[] =  itemStackContent.split(";");
+					int posX = Integer.parseInt(itemStackParts[0]);
+					int posY = Integer.parseInt(itemStackParts[1]);
+					int itemId = Integer.parseInt(itemStackParts[2]);
+					int stack = Integer.parseInt(itemStackParts[3]);
+					ItemStack itemStack = ItemStack.getItemStack(ItemManager.getInstance().getItem(itemId), stack);
+					setItemStack(itemStack, posX, posY);
+				}
+			} else {
+				System.out.println("Inventory can't be loaded: never saved inventory before.");
+			}
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
 	}
 
 }
