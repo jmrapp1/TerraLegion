@@ -98,6 +98,7 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.box2dlights:box2dlights:$box2DLightsVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+        compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     }
 }
 

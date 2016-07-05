@@ -42,5 +42,9 @@ public class Player extends com.jmr.terraria.game.world.entity.LivingEntity {
 	public Inventory getInventory() {
 		return inventory;
 	}
+
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
+	}
 	
 }

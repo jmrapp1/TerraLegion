@@ -4,10 +4,17 @@ import java.io.IOException;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.jmr.terraria.game.item.inventory.Inventory;
+import com.jmr.terraria.game.utils.JSONConverter;
 import com.jmr.terraria.game.world.block.BlockType;
 import com.jmr.terraria.game.world.chunk.Chunk;
 import com.jmr.terraria.game.world.chunk.ChunkManager;
 import com.jmr.terraria.game.world.World;
+import com.jmr.terraria.game.world.entity.impl.Player;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class WorldIO {
 
@@ -19,8 +26,7 @@ public class WorldIO {
 			handle.file().createNewFile();
 			
 			String totalToken = world.getSeed() + "\n" + 
-								world.getChunkManager().CHUNKS_X + " " + world.getChunkManager().CHUNKS_Y + "\n" +
-								world.getPlayer().getX() + " " + world.getPlayer().getY() + "\n";
+								world.getChunkManager().CHUNKS_X + " " + world.getChunkManager().CHUNKS_Y + "\n";
 			handle.writeString(totalToken, false);
 			
 			Chunk[][] chunks = world.getChunkManager().getChunks(); //Get the chunks and go through all
@@ -31,6 +37,9 @@ public class WorldIO {
 					}
 				}
 			}
+
+			// save player
+			savePlayer(world.getPlayer());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -50,13 +59,11 @@ public class WorldIO {
 			String[] dim = lines[1].split(" ");
 			int worldChunkSizeWidth = Integer.parseInt(dim[0]);
 			int worldChunkSizeHeight = Integer.parseInt(dim[1]);
-		
-			//Load player position
-			String[] posStr = lines[2].split(" ");
-			float playerX = Float.parseFloat(posStr[0]);
-			float playerY = Float.parseFloat(posStr[1]);
-		
-			LoadedWorldInfo worldInfo = new LoadedWorldInfo(playerX, playerY, seed, worldChunkSizeWidth, worldChunkSizeHeight);
+
+			//Load player
+			Player player = loadPlayer();
+
+			LoadedWorldInfo worldInfo = new LoadedWorldInfo(player, seed, worldChunkSizeWidth, worldChunkSizeHeight);
 		
 			//Go through directory and find all chunks. Load them.
 			for (FileHandle handle : baseDir.list()) {
@@ -191,6 +198,64 @@ public class WorldIO {
 	
 	public static boolean chunkFileExists(String worldFileName, int x, int y) {
 		return Gdx.files.external("worlds/" + worldFileName + "/chunk" + x + "_" + y + ".save").exists();
+	}
+
+	public static void savePlayer(Player player) {
+		// create the JSONObject for the player information
+		JSONObject playerInfo = new JSONObject();
+
+		// create a JSONObject for the x and y position of the player
+		JSONObject playerPosition = new JSONObject();
+		playerPosition.put("x", player.getX());
+		playerPosition.put("y", player.getY());
+
+		// add the position to the JSONObject playerInfo
+		playerInfo.put("playerPosition", playerPosition);
+
+		// create a JSONArray for the inventory items of the player
+		JSONObject playerInventory = JSONConverter.getJSONFromInventory(player.getInventory());
+
+		// add the playerInventory "list" to the JSONObject playerInfo
+		playerInfo.put("playerInventory", playerInventory);
+
+		// write to file
+		try {
+			FileHandle handle = Gdx.files.external("player.save");
+			if (!handle.exists()) {
+				handle.file().createNewFile();
+			}
+
+			handle.writeString(playerInfo.toJSONString(), false);
+		} catch(IOException ex) {
+			ex.printStackTrace();
+		}
+	}
+
+	public static Player loadPlayer() {
+		try {
+			FileHandle handle = Gdx.files.external("player.save");
+			if (!handle.exists()) {
+				// not saved player yet
+				return null;
+			}
+
+			String JSONString = handle.readString();
+
+			JSONObject playerInfo = (JSONObject) new JSONParser().parse(JSONString);
+
+			JSONObject playerPosition = (JSONObject) playerInfo.get("playerPosition");
+			Player player = new Player(Float.parseFloat(playerPosition.get("x").toString()), Float.parseFloat(playerPosition.get("y").toString()));
+
+			JSONObject jsonInventory = (JSONObject) playerInfo.get("playerInventory");
+
+			Inventory inventory = JSONConverter.getInventoryFromJSON(jsonInventory);
+
+			player.setInventory(inventory);
+			return player;
+		} catch(ParseException ex) {
+			ex.printStackTrace();
+		}
+		return null;
 	}
 	
 }

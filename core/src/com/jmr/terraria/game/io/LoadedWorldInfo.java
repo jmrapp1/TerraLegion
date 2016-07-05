@@ -1,27 +1,24 @@
 package com.jmr.terraria.game.io;
 
+import com.jmr.terraria.game.world.entity.impl.Player;
+
 public class LoadedWorldInfo {
 
-	private float playerX, playerY;
+	private Player player;
 	private int worldChunkSizeWidth, worldChunkSizeHeight;
 	private long seed;
 	
-	public LoadedWorldInfo(float playerX, float playerY, long seed, int worldChunkSizeWidth, int worldChunkSizeHeight) {
-		this.playerX = playerX;
-		this.playerY = playerY;
+	public LoadedWorldInfo(Player player, long seed, int worldChunkSizeWidth, int worldChunkSizeHeight) {
+		this.player = player;
 		this.seed = seed;
 		this.worldChunkSizeWidth = worldChunkSizeWidth;
 		this.worldChunkSizeHeight = worldChunkSizeHeight;
 	}
-	
-	public float getPlayerX() {
-		return playerX;
+
+	public Player getPlayer() {
+		return player;
 	}
 
-	public float getPlayerY() {
-		return playerY;
-	}
-	
 	public long getSeed() {
 		return seed;
 	}
