@@ -58,7 +58,7 @@ public class World {
 		seed = worldInfo.getSeed();
 		chunkManager.loadSeed(seed);
 		chunkManager.generateTerrain();
-		player = new Player(worldInfo.getPlayerX(), worldInfo.getPlayerY());
+		player = worldInfo.getPlayer();
 
 		physicsWorld = new PhysicsWorld(chunkManager, 0, -12f);
 		physicsWorld.setMaxYVelocity(8);
