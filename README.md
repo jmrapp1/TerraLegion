@@ -37,8 +37,15 @@ When adding your own features to the game or modifying existing code, there are 
 9. Apply the changes and press *OK*. 
 10. You should now be able to run the game from Desktop and Android using the two run configurations.
 
-### Video
+### Gallery
+**Video:**
 https://www.youtube.com/watch?v=-z4o8CwJR8E
+
+**Images**
+
+![](http://i.imgur.com/m6QcBgj.png)
+![](http://i.imgur.com/PcQ9tUH.png)
+![](http://i.imgur.com/5OkJRLT.png)
 
 ### License
 The MIT License (MIT)
