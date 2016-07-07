@@ -92,7 +92,8 @@ public class GameHud {
             if (moveControl.getTouchpad().getKnobPercentY() > .5f && world.getPlayer().canJump())
                 world.getPlayer().jump();
             world.getPlayer().addVelocity(moveControl.getTouchpad().getKnobPercentX() * world.getPlayer().getSpeed(), 0);
-        } else if (actionControl.getTouchpad().isTouched()) {
+        }
+        if (actionControl.getTouchpad().isTouched()) {
             ItemStack selectedItemStack = getSelectedItemStack();
             if (selectedItemStack != null) {
                 if (selectedItemStack.getItem() instanceof ToolItem) {
