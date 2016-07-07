@@ -28,6 +28,11 @@ public class AtlasRegionDrawable implements Drawable {
 		sb.draw(atlasRegion, x, y);
 	}
 
+	@Override
+	public void render(SpriteBatch sb, float x, float y, final boolean flipped) {
+		render(sb, x, y);
+	}
+
 	public TextureAtlas.AtlasRegion getTexture() {
 		return atlasRegion;
 	}

@@ -30,6 +30,11 @@ public class SpriteDrawable implements Drawable {
 		sprite.draw(sb);
 	}
 
+	@Override
+	public void render(SpriteBatch sb, float x, float y, final boolean flipped) {
+		render(sb, x, y);
+	}
+
 	public Sprite getSprite() {
 		return sprite;
 	}

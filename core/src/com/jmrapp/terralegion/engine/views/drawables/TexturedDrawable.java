@@ -27,6 +27,15 @@ public class TexturedDrawable implements Drawable {
 	public void render(SpriteBatch sb, float x, float y) {
 		sb.draw(texture, x, y);
 	}
+
+    @Override
+	public void render(SpriteBatch sb, float x, float y, final boolean flipped) {
+		sb.draw(texture,
+                flipped ? x+texture.getWidth() : x,
+                y,
+                flipped ? -texture.getWidth() : texture.getWidth(),
+                texture.getHeight());
+	}
 	
 	public Texture getTexture() {
 		return texture;

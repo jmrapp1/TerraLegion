@@ -12,6 +12,8 @@ public interface Drawable {
 
 	void render(SpriteBatch sb, float x, float y);
 
+	void render(SpriteBatch sb, float x, float y, final boolean flipped);
+
 	TextureRegion getTextureRegion();
 
 	Drawable getInstance();

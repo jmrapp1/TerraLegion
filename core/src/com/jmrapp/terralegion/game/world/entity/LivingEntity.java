@@ -10,6 +10,7 @@ import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.engine.world.entity.WorldBody;
 import com.jmrapp.terralegion.engine.utils.Timer;
 import com.jmrapp.terralegion.game.item.impl.ToolItem;
+import com.jmrapp.terralegion.game.utils.Direction;
 
 /**
  * Created by Jon on 12/21/15.
@@ -18,6 +19,7 @@ public abstract class LivingEntity extends TexturedEntity {
 
 	protected static final ShapeRenderer shapeRenderer = new ShapeRenderer();
 	private static final float healthBarWidth = 30, healthBarHeight = 5;
+    protected int facingDirection = Direction.LEFT;
 
 	private boolean canJump = true;
 	private float health, maxHealth, jumpVelocity;
@@ -60,8 +62,8 @@ public abstract class LivingEntity extends TexturedEntity {
 	}
 
 	@Override
-	public void render(SpriteBatch sb, double lightValue) {
-		super.render(sb, lightValue);
+	public void render(SpriteBatch sb, double lightValue, final boolean flipped) {
+		super.render(sb, lightValue, flipped);
 		if (Timer.getGameTimeElapsed() - lastDamageReceived <= 5f) {
 			renderHealthBar(sb);
 		}
@@ -114,5 +116,17 @@ public abstract class LivingEntity extends TexturedEntity {
 	public float getJumpVelocity() {
 		return jumpVelocity;
 	}
+
+    public void faceDirection(final int direction) {
+        facingDirection = direction;
+    }
+
+    public int getFacingDirection() {
+        return facingDirection;
+    }
+
+    public boolean isFlipped() {
+        return facingDirection == Direction.RIGHT;
+    }
 
 }

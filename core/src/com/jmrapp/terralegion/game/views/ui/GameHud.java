@@ -17,20 +17,21 @@ import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.ui.PictureButton;
 import com.jmrapp.terralegion.engine.views.screens.ScreenManager;
+import com.jmrapp.terralegion.game.item.ItemStack;
 import com.jmrapp.terralegion.game.item.impl.BlockItem;
+import com.jmrapp.terralegion.game.item.impl.CombatItem;
+import com.jmrapp.terralegion.game.item.impl.ToolItem;
+import com.jmrapp.terralegion.game.utils.Direction;
+import com.jmrapp.terralegion.game.utils.Vector2Factory;
+import com.jmrapp.terralegion.game.views.screen.GameScreen;
+import com.jmrapp.terralegion.game.views.screen.InventoryScreen;
 import com.jmrapp.terralegion.game.world.DayManager;
+import com.jmrapp.terralegion.game.world.World;
 import com.jmrapp.terralegion.game.world.block.BlockManager;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
 import com.jmrapp.terralegion.game.world.entity.LivingEntity;
-import com.jmrapp.terralegion.game.item.ItemStack;
-import com.jmrapp.terralegion.game.item.impl.CombatItem;
-import com.jmrapp.terralegion.game.item.impl.ToolItem;
-import com.jmrapp.terralegion.game.views.screen.GameScreen;
-import com.jmrapp.terralegion.game.views.screen.InventoryScreen;
-import com.jmrapp.terralegion.game.utils.Vector2Factory;
-import com.jmrapp.terralegion.game.world.World;
 
 /**
  * Created by Jon on 9/29/15.
@@ -89,6 +90,11 @@ public class GameHud {
         }
 
         if (moveControl.getTouchpad().isTouched()) {
+            //update player facing direction
+            if(moveControl.getTouchpad().getKnobPercentX() > 0)
+                world.getPlayer().faceDirection(Direction.RIGHT);
+            else
+                world.getPlayer().faceDirection(Direction.LEFT);
             if (moveControl.getTouchpad().getKnobPercentY() > .5f) {
                 if (world.getPlayer().canJump()) {
                     world.getPlayer().jump();

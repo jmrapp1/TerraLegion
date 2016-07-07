@@ -5,6 +5,7 @@ import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.TexturedDrawable;
 import com.jmrapp.terralegion.engine.utils.Timer;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
+import com.jmrapp.terralegion.game.utils.Direction;
 import com.jmrapp.terralegion.game.world.entity.FriendlyEntity;
 
 /**
@@ -25,9 +26,11 @@ public class Bunny extends FriendlyEntity {
 			if (MathUtils.random(1, 100) > 50) {
 				moveX = -speed;
 				lastDirectionChange = Timer.getGameTimeElapsed();
+				faceDirection(Direction.LEFT);
 			} else {
 				moveX = speed;
 				lastDirectionChange = Timer.getGameTimeElapsed();
+                faceDirection(Direction.RIGHT);
 			}
 		}
 		if (MathUtils.random(1, 100) < 20) {
