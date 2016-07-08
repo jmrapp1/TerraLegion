@@ -5,12 +5,14 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.jmrapp.terralegion.engine.camera.OrthoCamera;
+import com.jmrapp.terralegion.game.utils.Direction;
 import com.jmrapp.terralegion.game.world.DayManager;
 import com.jmrapp.terralegion.game.world.block.Block;
 import com.jmrapp.terralegion.game.world.block.BlockManager;
 import com.jmrapp.terralegion.game.world.block.BlockProperties;
 import com.jmrapp.terralegion.game.world.block.BlockPropertiesFactory;
 import com.jmrapp.terralegion.game.world.block.BlockType;
+import com.jmrapp.terralegion.game.world.block.impl.LightBlock;
 import com.jmrapp.terralegion.game.world.entity.Drop;
 import com.jmrapp.terralegion.game.world.entity.LivingEntity;
 import com.jmrapp.terralegion.game.world.entity.TexturedEntity;
@@ -254,9 +256,7 @@ public class Chunk {
 					blocks[x][y] = type;
 				}
 				Block block = BlockManager.getBlock(type);
-				if (block.getClass() != Block.class) { //If there are no special properties
-					block.onPlace(chunkManager, this, x, y);
-				}
+				block.onLoad(chunkManager, this, x, y);
 			}
 		}
 	}
@@ -425,4 +425,25 @@ public class Chunk {
 		return blocks;
 	}
 
+	public void setReplaceNearby(int placedX, int placedY, Direction direction, BlockType replace, BlockType replaceWith) {
+		// get the position of the block that might be changed / "updated"
+		int modifyBlockX = placedX;
+		int modifyBlockY = placedY;
+		if(direction == Direction.TOP) {
+			modifyBlockY += 1;
+		} else if(direction == Direction.BOTTOM) {
+			modifyBlockY -= 1;
+		} else if(direction == Direction.LEFT) {
+			modifyBlockX -= 1;
+		} else if(direction == Direction.RIGHT) {
+			modifyBlockX += 1;
+		}
+
+		BlockType modifyType = getBlock(modifyBlockX, modifyBlockY);
+		// check if the block should be modified
+		if(modifyType == replace) {
+			// block should be modified
+			setBlock(replaceWith, modifyBlockX, modifyBlockY, false); // don't call events otherwise old block will drop
+		}
+	}
 }

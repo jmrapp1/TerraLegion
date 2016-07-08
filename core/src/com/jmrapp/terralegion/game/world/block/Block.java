@@ -107,4 +107,8 @@ public class Block {
 		return type;
 	}
 
+	public void onLoad(ChunkManager chunkManager, Chunk chunk, int chunkTileX, int chunkTileY) {
+
+	}
+
 }
