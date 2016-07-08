@@ -10,6 +10,9 @@ When adding your own features to the game or modifying existing code, there are 
 2. Following proper coding standards is a must. Be sure to follow object-oriented design standards, implement design patterns when able to, and document all code following documentation standards for Java.  
 3. If your additions add a new utility or module to the game, be sure to add a separate testing application to the "test" package of the code. This application should simply provide test cases, showing the functions of your new additions. For example, you can find the [InventoryTest Application](https://github.com/baseball435/Terraria-Clone/blob/master/core/src/com/jmr/terraria/test/InventoryTest.java) which simply tests different methods of the inventory class. You can also find the [Noise Visualization Utility](https://github.com/baseball435/Terraria-Clone/blob/master/core/src/com/jmr/terraria/test/NoiseVisualizationScreen.java) which allows you to test and visualize the outcomes of Simplex Noise.  
 
+### Want To Contribute But Don't Know Where To Start?
+[Read the Wiki!](https://github.com/jmrapp1/TerraLegion/wiki) This will provide all of the information you need to understand the architecture of the game and how it functions.
+
 ### Current Features
 - **World Generation**: Over 1,500,000 blocks in the world.
 - **Lighting System**: Efficient with almost no boundaries when placing light sources.
