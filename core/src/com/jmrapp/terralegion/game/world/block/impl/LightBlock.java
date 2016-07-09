@@ -32,11 +32,6 @@ public class LightBlock extends Block {
 		int worldY = chunkTileY + (chunk.getStartY() * Chunk.CHUNK_SIZE);
 		LightUtils.calculateChunkLight(chunkManager, worldX, worldY, lightAmount, true);
 	}
-
-	@Override
-	public void onLoad(ChunkManager chunkManager, Chunk chunk, int chunkTileX, int chunkTileY) {
-		onPlace(chunkManager, chunk, chunkTileX, chunkTileY);
-	}
 	
 	
 }

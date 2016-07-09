@@ -1,7 +1,6 @@
 package com.jmrapp.terralegion.game.world.block;
 
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
-import com.jmrapp.terralegion.game.world.block.impl.GrassBlock;
 import com.jmrapp.terralegion.game.world.block.impl.LightBlock;
 
 import java.util.HashMap;
