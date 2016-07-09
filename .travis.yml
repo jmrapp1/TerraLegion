@@ -1,4 +1,6 @@
 language: java
+before_script:
+ - chmod +x gradlew
 notifications:
   # Email notifications are disabled to not annoy anybody.
   # See http://about.travis-ci.org/docs/user/build-configuration/ to learn more
