@@ -135,8 +135,12 @@ public class CraftingScreen implements Screen {
 			} else if (invBtn.isPressed(touchX, touchY)) {
 				ScreenManager.setScreen(new InventoryScreen(gameScreen, world, inventory));
 			} else if (selectedRecipe != null && craftBtn.isPressed(touchX, touchY)) {
-				inventory.addItemStack(selectedRecipe.craft(inventory));
-				updateSelectedRecipeInfo();
+				// check if user can craft the selected item/block
+				if(selectedRecipe.canCraft(inventory)) {
+					// give the player the crafted item/block
+					inventory.addItemStack(selectedRecipe.craft(inventory)); // also removes required items
+					updateSelectedRecipeInfo();
+				}
 			}
 		}
 	}
