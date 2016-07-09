@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.jmrapp.terralegion.engine.camera.OrthoCamera;
 import com.jmrapp.terralegion.engine.input.InputController;
@@ -149,13 +150,15 @@ public class GameHud {
                     if (position.dst(origin) <= 100) {
                         BlockType type = world.getChunkManager().getBlockFromPos(touchX, touchY);
                         if (type == BlockType.AIR) {
-                            highlightedBlockPosition.set(((int)touchX / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE, ((int)touchY / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE);
-                            if (Timer.getGameTimeElapsed() - lastBlockPlace > .75f) {
-                                if (world.getChunkManager().getBlockFromPos(touchX, touchY) == BlockType.AIR) {
-                                    collisionTestRect.set(highlightedBlockPosition.x, highlightedBlockPosition.y, ChunkManager.TILE_SIZE, ChunkManager.TILE_SIZE);
-                                    if (!world.getPlayer().getBounds().overlaps(collisionTestRect) || !BlockManager.getBlock(((BlockItem) selectedItemStack.getItem()).getBlockType()).collides()) {
-                                        world.getChunkManager().setBlock(((BlockItem) selectedItemStack.getItem()).getBlockType(), touchX, touchY, true);
-                                        world.getPlayer().getInventory().removeItemStack(selectedItemStack.getItem(), 1);
+                            if(world.getChunkManager().getChunkFromPos(touchX, touchY).findLivingEntitiesInRange(touchX, touchY, ChunkManager.TILE_SIZE).size == 0) {
+                                highlightedBlockPosition.set(((int) touchX / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE, ((int) touchY / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE);
+                                if (Timer.getGameTimeElapsed() - lastBlockPlace > .75f) {
+                                    if (world.getChunkManager().getBlockFromPos(touchX, touchY) == BlockType.AIR) {
+                                        collisionTestRect.set(highlightedBlockPosition.x, highlightedBlockPosition.y, ChunkManager.TILE_SIZE, ChunkManager.TILE_SIZE);
+                                        if (!world.getPlayer().getBounds().overlaps(collisionTestRect) || !BlockManager.getBlock(((BlockItem) selectedItemStack.getItem()).getBlockType()).collides()) {
+                                            world.getChunkManager().setBlock(((BlockItem) selectedItemStack.getItem()).getBlockType(), touchX, touchY, true);
+                                            world.getPlayer().getInventory().removeItemStack(selectedItemStack.getItem(), 1);
+                                        }
                                     }
                                 }
                             }
