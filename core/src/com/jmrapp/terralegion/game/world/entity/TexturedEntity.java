@@ -17,7 +17,7 @@ public abstract class TexturedEntity extends WorldBody {
 		this.drawable = drawable;
 		this.speed = speed;
 	}
-	
+
 	public void render(SpriteBatch sb, double lightValue) {
 		float value = (float) (lightValue < LightUtils.MIN_LIGHT_VALUE ? LightUtils.MIN_LIGHT_VALUE : lightValue);
 		sb.setColor(value, value, value, 1);

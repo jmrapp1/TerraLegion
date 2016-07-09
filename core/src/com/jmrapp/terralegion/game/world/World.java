@@ -6,15 +6,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.jmrapp.terralegion.engine.camera.OrthoCamera;
 import com.jmrapp.terralegion.engine.utils.Settings;
 import com.jmrapp.terralegion.engine.world.PhysicsWorld;
+import com.jmrapp.terralegion.game.io.LoadedWorldInfo;
 import com.jmrapp.terralegion.game.io.WorldIO;
+import com.jmrapp.terralegion.game.item.ItemManager;
+import com.jmrapp.terralegion.game.item.ItemType;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
 import com.jmrapp.terralegion.game.world.entity.impl.Bunny;
 import com.jmrapp.terralegion.game.world.entity.impl.Player;
-import com.jmrapp.terralegion.game.io.LoadedWorldInfo;
-import com.jmrapp.terralegion.game.item.ItemManager;
-import com.jmrapp.terralegion.game.item.ItemType;
 
 public class World {
 

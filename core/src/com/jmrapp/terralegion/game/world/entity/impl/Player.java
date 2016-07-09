@@ -47,5 +47,4 @@ public class Player extends LivingEntity {
 	public void setInventory(Inventory inventory) {
 		this.inventory = inventory;
 	}
-	
 }

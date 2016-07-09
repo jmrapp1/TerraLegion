@@ -1,9 +1,9 @@
 package com.jmrapp.terralegion.game.world.entity.impl;
 
 import com.badlogic.gdx.math.MathUtils;
+import com.jmrapp.terralegion.engine.utils.Timer;
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.TexturedDrawable;
-import com.jmrapp.terralegion.engine.utils.Timer;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.game.world.entity.FriendlyEntity;
 
