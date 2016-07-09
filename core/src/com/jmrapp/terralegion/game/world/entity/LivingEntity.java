@@ -3,14 +3,14 @@ package com.jmrapp.terralegion.game.world.entity;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.jmrapp.terralegion.engine.utils.Timer;
+import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.engine.world.collision.CollisionInfo;
 import com.jmrapp.terralegion.engine.world.collision.CollisionSide;
-import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.engine.world.entity.WorldBody;
-import com.jmrapp.terralegion.engine.utils.Timer;
 import com.jmrapp.terralegion.game.item.impl.ToolItem;
-import com.jmrapp.terralegion.game.utils.Direction;
+import com.jmrapp.terralegion.game.utils.LightUtils;
 
 /**
  * Created by Jon on 12/21/15.
@@ -19,8 +19,9 @@ public abstract class LivingEntity extends TexturedEntity {
 
 	protected static final ShapeRenderer shapeRenderer = new ShapeRenderer();
 	private static final float healthBarWidth = 30, healthBarHeight = 5;
-    protected int facingDirection = Direction.LEFT;
+    public static final int LEFT = -1, RIGHT = 1;
 
+    private int facingDirection = LEFT;
 	private boolean canJump = true;
 	private float health, maxHealth, jumpVelocity;
 	private float lastToolUsedTime, lastDamageReceived = Timer.getGameTimeElapsed();
@@ -62,8 +63,16 @@ public abstract class LivingEntity extends TexturedEntity {
 	}
 
 	@Override
-	public void render(SpriteBatch sb, double lightValue, final boolean flipped) {
-		super.render(sb, lightValue, flipped);
+	public void render(SpriteBatch sb, double lightValue) {
+		float value = (float) (lightValue < LightUtils.MIN_LIGHT_VALUE ? LightUtils.MIN_LIGHT_VALUE : lightValue);
+		sb.setColor(value, value, value, 1);
+		sb.draw(drawable.getTextureRegion(),
+				isFlipped() ? x : x+drawable.getTextureRegion().getRegionWidth(),
+				y,
+				isFlipped() ? drawable.getTextureRegion().getRegionWidth() : -drawable.getTextureRegion().getRegionWidth(),
+				drawable.getTextureRegion().getRegionHeight());
+		sb.setColor(Color.WHITE);
+
 		if (Timer.getGameTimeElapsed() - lastDamageReceived <= 5f) {
 			renderHealthBar(sb);
 		}
@@ -126,7 +135,17 @@ public abstract class LivingEntity extends TexturedEntity {
     }
 
     public boolean isFlipped() {
-        return facingDirection == Direction.RIGHT;
+        return facingDirection == RIGHT;
     }
 
+	@Override
+	public void addVelocity(float x, float y) {
+        if(x < 0 && velX != 0) {
+            faceDirection(LEFT);
+        } else if(x > 0 && velX != 0) {
+            faceDirection(RIGHT);
+        }
+
+        super.addVelocity(x, y);
+    }
 }

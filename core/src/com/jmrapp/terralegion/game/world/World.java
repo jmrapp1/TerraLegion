@@ -81,7 +81,7 @@ public class World {
 	
 	public void render(SpriteBatch sb, OrthoCamera camera) {
 		chunkManager.renderOnScreen(sb, camera, camera.getPos().x, camera.getPos().y);
-		player.render(sb, chunkManager.getLightValueFromPos(player.getX(), player.getY()), player.isFlipped());
+		player.render(sb, chunkManager.getLightValueFromPos(player.getX(), player.getY()));
 	}
 	
 	public ChunkManager getChunkManager() {

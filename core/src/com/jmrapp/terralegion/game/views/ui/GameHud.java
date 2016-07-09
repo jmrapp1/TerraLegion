@@ -21,7 +21,6 @@ import com.jmrapp.terralegion.game.item.ItemStack;
 import com.jmrapp.terralegion.game.item.impl.BlockItem;
 import com.jmrapp.terralegion.game.item.impl.CombatItem;
 import com.jmrapp.terralegion.game.item.impl.ToolItem;
-import com.jmrapp.terralegion.game.utils.Direction;
 import com.jmrapp.terralegion.game.utils.Vector2Factory;
 import com.jmrapp.terralegion.game.views.screen.GameScreen;
 import com.jmrapp.terralegion.game.views.screen.InventoryScreen;
@@ -90,18 +89,9 @@ public class GameHud {
         }
 
         if (moveControl.getTouchpad().isTouched()) {
-            //update player facing direction
-            if(moveControl.getTouchpad().getKnobPercentX() > 0)
-                world.getPlayer().faceDirection(Direction.RIGHT);
-            else
-                world.getPlayer().faceDirection(Direction.LEFT);
-            if (moveControl.getTouchpad().getKnobPercentY() > .5f) {
-                if (world.getPlayer().canJump()) {
-                    world.getPlayer().jump();
-                }
-            } else {
-                world.getPlayer().addVelocity(moveControl.getTouchpad().getKnobPercentX() * world.getPlayer().getSpeed(), 0);
-            }
+            if (moveControl.getTouchpad().getKnobPercentY() > .5f && world.getPlayer().canJump())
+                world.getPlayer().jump();
+            world.getPlayer().addVelocity(moveControl.getTouchpad().getKnobPercentX() * world.getPlayer().getSpeed(), 0);
         } else if (actionControl.getTouchpad().isTouched()) {
             ItemStack selectedItemStack = getSelectedItemStack();
             if (selectedItemStack != null) {

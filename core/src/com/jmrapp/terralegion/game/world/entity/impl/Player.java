@@ -6,7 +6,6 @@ import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.TexturedDrawable;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.game.item.inventory.Inventory;
-import com.jmrapp.terralegion.game.utils.Direction;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.entity.Drop;
 import com.jmrapp.terralegion.game.world.entity.LivingEntity;
@@ -35,11 +34,9 @@ public class Player extends LivingEntity {
 		}
 		if (Gdx.input.isKeyPressed(Keys.A)) {
 			addVelocity(-12f, 0);
-			faceDirection(Direction.LEFT);
 		}
 		if (Gdx.input.isKeyPressed(Keys.D)) {
 			addVelocity(12f, 0);
-			faceDirection(Direction.RIGHT);
 		}
 	}
 

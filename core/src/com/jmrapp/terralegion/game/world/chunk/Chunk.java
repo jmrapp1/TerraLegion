@@ -140,11 +140,7 @@ public class Chunk {
 			int tx = ChunkManager.pixelToTilePosition(entity.getX()) - (startX * CHUNK_SIZE);
 			int ty = ChunkManager.pixelToTilePosition(entity.getY()) - (startY * CHUNK_SIZE);
 			if (tx >= 0 && tx < CHUNK_SIZE && ty >= 0 && ty < CHUNK_SIZE) {
-				if(entity instanceof LivingEntity)
-					entity.render(sb, getLightValue(tx, ty), ((LivingEntity) entity).isFlipped());
-				else
-					entity.render(sb, getLightValue(tx, ty));
-
+				entity.render(sb, getLightValue(tx, ty));
 			} else { //This entity is in the wrong chunk because it moved out of it
 				Chunk chunk = relocateEntity(entity);
 				if (chunk != null) {

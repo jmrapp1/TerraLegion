@@ -19,13 +19,9 @@ public abstract class TexturedEntity extends WorldBody {
 	}
 
 	public void render(SpriteBatch sb, double lightValue) {
-		render(sb, lightValue, false);
-	}
-	
-	public void render(SpriteBatch sb, double lightValue, final boolean flipped) {
 		float value = (float) (lightValue < LightUtils.MIN_LIGHT_VALUE ? LightUtils.MIN_LIGHT_VALUE : lightValue);
 		sb.setColor(value, value, value, 1);
-		drawable.render(sb, x, y, flipped);
+		drawable.render(sb, x, y);
 		sb.setColor(Color.WHITE);
 	}
 
