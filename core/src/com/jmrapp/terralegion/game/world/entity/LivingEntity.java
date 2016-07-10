@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.jmrapp.terralegion.engine.utils.Timer;
+import com.jmrapp.terralegion.engine.views.drawables.AnimationDrawable;
 import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.engine.world.collision.CollisionInfo;
 import com.jmrapp.terralegion.engine.world.collision.CollisionSide;
@@ -19,9 +20,11 @@ public abstract class LivingEntity extends TexturedEntity {
 
 	protected static final ShapeRenderer shapeRenderer = new ShapeRenderer();
 	private static final float healthBarWidth = 30, healthBarHeight = 5;
-    public static final int LEFT = -1, RIGHT = 1;
+    public enum Direction {
+		LEFT, RIGHT
+	}
 
-    private int facingDirection = LEFT;
+    private Direction facingDirection = Direction.LEFT;
 	private boolean canJump = true;
 	private float health, maxHealth, jumpVelocity;
 	private float lastToolUsedTime, lastDamageReceived = Timer.getGameTimeElapsed();
@@ -35,15 +38,13 @@ public abstract class LivingEntity extends TexturedEntity {
 
 	@Override
 	public boolean collision(WorldBody obj, CollisionInfo info) {
-		if (info.getCollisionA() == this) {
-			if (info.getCollisionASide() == CollisionSide.BOTTOM) {
-				canJump = true;
-			}
-		} else if (info.getCollisionB() == this) {
-			if (info.getCollisionBSide() == CollisionSide.BOTTOM) {
-				canJump = true;
-			}
-		}
+        boolean isThisCollisionA = info.getCollisionA() == this;
+        boolean isThisCollisionB = info.getCollisionB() == this;
+        boolean isBottomCollisionA = CollisionSide.BOTTOM == info.getCollisionASide();
+        boolean isBottomCollisionB = CollisionSide.BOTTOM == info.getCollisionBSide();
+		if ((isThisCollisionA || isThisCollisionB) && (isBottomCollisionA || isBottomCollisionB)) {
+            canJump = true;
+        }
 		return true;
 	}
 
@@ -66,11 +67,7 @@ public abstract class LivingEntity extends TexturedEntity {
 	public void render(SpriteBatch sb, double lightValue) {
 		float value = (float) (lightValue < LightUtils.MIN_LIGHT_VALUE ? LightUtils.MIN_LIGHT_VALUE : lightValue);
 		sb.setColor(value, value, value, 1);
-		sb.draw(drawable.getTextureRegion(),
-				isFlipped() ? x : x+drawable.getTextureRegion().getRegionWidth(),
-				y,
-				isFlipped() ? drawable.getTextureRegion().getRegionWidth() : -drawable.getTextureRegion().getRegionWidth(),
-				drawable.getTextureRegion().getRegionHeight());
+        sb.draw(drawable.getTextureRegion(), x, y, drawable.getTextureRegion().getRegionWidth(), drawable.getTextureRegion().getRegionHeight());
 		sb.setColor(Color.WHITE);
 
 		if (Timer.getGameTimeElapsed() - lastDamageReceived <= 5f) {
@@ -126,26 +123,35 @@ public abstract class LivingEntity extends TexturedEntity {
 		return jumpVelocity;
 	}
 
-    public void faceDirection(final int direction) {
+    public void faceDirection(Direction direction) {
+        if(!(drawable instanceof AnimationDrawable) && direction != facingDirection) {
+            drawable.getTextureRegion().flip(true, false);
+        }
+        else if(drawable instanceof AnimationDrawable) {
+            AnimationDrawable animationDrawable = (AnimationDrawable) drawable;
+            if(facingDirection != direction && direction == Direction.LEFT) {
+                animationDrawable.setAnimationByType(AnimationDrawable.Type.WALK_LEFT);
+                animationDrawable.update();
+            }
+            else if(facingDirection != direction && direction == Direction.RIGHT) {
+                animationDrawable.setAnimationByType(AnimationDrawable.Type.WALK_RIGHT);
+                animationDrawable.update();
+            }
+        }
         facingDirection = direction;
     }
 
-    public int getFacingDirection() {
+    public Direction getFacingDirection() {
         return facingDirection;
-    }
-
-    public boolean isFlipped() {
-        return facingDirection == RIGHT;
     }
 
 	@Override
 	public void addVelocity(float x, float y) {
         if(x < 0 && velX != 0) {
-            faceDirection(LEFT);
+            faceDirection(Direction.RIGHT);
         } else if(x > 0 && velX != 0) {
-            faceDirection(RIGHT);
+            faceDirection(Direction.LEFT);
         }
-
         super.addVelocity(x, y);
     }
 }

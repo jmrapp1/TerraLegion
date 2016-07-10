@@ -15,6 +15,8 @@ public class Player extends LivingEntity {
 
 	private Inventory inventory;
 
+	private final float walkingVelocity = 12f;
+
 	public Player(float x, float y) {
 		super(createAnimationDrawable(), x, y, BodyType.DYNAMIC, 12f, 100, 100, 6.5f);
 		inventory = new Inventory(5, 8);
@@ -31,23 +33,6 @@ public class Player extends LivingEntity {
 		}
 	}
 
-    /**
-     * Positive values means going to the east, negative values going to the west.
-     * @param velocity
-     */
-    public void addVelocity(float velocity) {
-        addVelocity(velocity, 0);
-        AnimationDrawable animationDrawable = (AnimationDrawable) drawable;
-        if(velocity < 0) {
-            animationDrawable.setAnimationByType(AnimationDrawable.Type.WALK_WEST);
-            animationDrawable.update();
-        }
-        else if(velocity > 0) {
-            animationDrawable.setAnimationByType(AnimationDrawable.Type.WALK_EAST);
-            animationDrawable.update();
-        }
-    }
-
 	@Override
 	public void update() {
 		if (Gdx.input.isKeyPressed(Keys.SPACE) || Gdx.input.isKeyPressed(Keys.W) || Gdx.input.isKeyPressed(Keys.UP)) {
@@ -55,10 +40,10 @@ public class Player extends LivingEntity {
 				jump();
 		}
 		if (Gdx.input.isKeyPressed(Keys.A) || Gdx.input.isKeyPressed(Keys.LEFT)) {
-			addVelocity(-12f);
+			addVelocity(-walkingVelocity, 0);
 		}
 		if (Gdx.input.isKeyPressed(Keys.D) || Gdx.input.isKeyPressed(Keys.RIGHT)) {
-			addVelocity(12f);
+			addVelocity(walkingVelocity, 0);
 		}
 	}
 
