@@ -36,6 +36,8 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadTexture("joystickKnob", "ui/joystickKnob.png");
         ResourceManager.getInstance().loadTexture("bg", "bg.png");
         ResourceManager.getInstance().loadTexture("player", "player.png");
+        ResourceManager.getInstance().loadTexture("playerAnimated", "player_animated.png");
+
         ResourceManager.getInstance().loadTexture("leftBtn", "ui/leftBtn.png");
         ResourceManager.getInstance().loadTexture("rightBtn", "ui/rightBtn.png");
         ResourceManager.getInstance().loadTexture("upBtn", "ui/upBtn.png");
