@@ -40,11 +40,7 @@ public class HillGenerator implements WorldGenerator {
 
 		if (treeVal > treeValLast && treeVal > treeValNext) { //Peak. Spawn tree
 			int treeY = finalY + 1;
-			ArrayList<TreeBlock> blocks = TreeGenerator.generateTree(x, treeY);
-			for(int w = 0; w < blocks.size(); w++) {
-				TreeBlock block = blocks.get(w);
-				chunk.setBlock(block.getType(), (int)block.getPosition().x, (int)block.getPosition().y, false);
-			}
+			TreeGenerator.generateTree(chunk, x, treeY);
 		}
 
 		//GENERATE BELOW
