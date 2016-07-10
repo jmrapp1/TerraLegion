@@ -1,8 +1,11 @@
 package com.jmrapp.terralegion.game.world.chunk.gen;
 
+import com.badlogic.gdx.math.Vector2;
 import com.jmrapp.terralegion.engine.world.SimplexNoise;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
+
+import java.util.ArrayList;
 
 public class HillGenerator implements WorldGenerator {
 
@@ -37,13 +40,7 @@ public class HillGenerator implements WorldGenerator {
 
 		if (treeVal > treeValLast && treeVal > treeValNext) { //Peak. Spawn tree
 			int treeY = finalY + 1;
-			chunk.setBlock(BlockType.WOOD, x, treeY, false);
-			chunk.setBlock(BlockType.WOOD, x, treeY + 1, false);
-			chunk.setBlock(BlockType.WOOD, x, treeY + 2, false);
-			chunk.setBlock(BlockType.WOOD, x, treeY + 3, false);
-			chunk.setBlock(BlockType.LEAVES, x, treeY + 4, false);
-			chunk.setBlock(BlockType.LEAVES, x - 1, treeY + 3, false);
-			chunk.setBlock(BlockType.LEAVES, x + 1, treeY + 3, false);
+			TreeGenerator.generateTree(chunk, x, treeY);
 		}
 
 		//GENERATE BELOW
