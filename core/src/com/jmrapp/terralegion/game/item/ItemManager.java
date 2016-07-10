@@ -25,9 +25,10 @@ public class ItemManager {
 		items.put(BlockType.DIAMOND.getId(), new BlockItem(BlockType.DIAMOND, ItemCategory.BLOCK, "Diamond Ore", ResourceManager.getInstance().getDrawable("diamond"), 64));
 		items.put(BlockType.COAL.getId(), new BlockItem(BlockType.COAL, ItemCategory.BLOCK, "Coal Ore", ResourceManager.getInstance().getDrawable("coal"), 64));
 		items.put(ItemType.WOODEN_PICKAXE.getId(), new PickaxeItem(ItemType.WOODEN_PICKAXE, "Wooden Pickaxe", ResourceManager.getInstance().getDrawable("woodenPickaxe"), 1, 4, 1.0f, 100, .5f));
-		items.put(BlockType.WOOD.getId(), new BlockItem(BlockType.WOOD, ItemCategory.BLOCK, "Wood", ResourceManager.getInstance().getDrawable("wood"), 64));
+		//items.put(BlockType.WOOD.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
 		items.put(BlockType.LEAVES.getId(), new BlockItem(BlockType.LEAVES, ItemCategory.BLOCK, "Leaves", ResourceManager.getInstance().getDrawable("leaves"), 64));
 		items.put(ItemType.SWORD.getId(), new SwordItem(ItemType.SWORD, "Fiery Sword", ResourceManager.getInstance().getDrawable("sword"), 1, 6, 1.0f, 50, 1.0f));
+		items.put(ItemType.STICK.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
 	}
 
 	public Item getItem(ItemType type) {
