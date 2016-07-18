@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.jmrapp.terralegion.engine.camera.OrthoCamera;
 import com.jmrapp.terralegion.engine.input.InputController;
@@ -92,7 +91,7 @@ public class GameHud {
         if (moveControl.getTouchpad().isTouched()) {
             if (moveControl.getTouchpad().getKnobPercentY() > .5f && world.getPlayer().canJump())
                 world.getPlayer().jump();
-            world.getPlayer().addVelocity(moveControl.getTouchpad().getKnobPercentX() * world.getPlayer().getSpeed());
+            world.getPlayer().addVelocity(moveControl.getTouchpad().getKnobPercentX() * world.getPlayer().getSpeed(), 0);
         } else if (actionControl.getTouchpad().isTouched()) {
             ItemStack selectedItemStack = getSelectedItemStack();
             if (selectedItemStack != null) {
