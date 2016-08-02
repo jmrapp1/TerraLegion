@@ -121,11 +121,11 @@ public class Chunk {
 					if ((type == null || type == BlockType.AIR) || BlockManager.getBlock(type).isTransparent()) {
 						BlockType wallType = getWall(x, y);
 						if (wallType != null && wallType != BlockType.AIR) {
-							BlockManager.getBlock(wallType).render(sb, x * ChunkManager.TILE_SIZE + (startX * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), y * ChunkManager.TILE_SIZE + (startY * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), getLightValue(x, y));
+							BlockManager.getBlock(wallType).render(camera, sb, x * ChunkManager.TILE_SIZE + (startX * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), y * ChunkManager.TILE_SIZE + (startY * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), getLightValue(x, y));
 						}
 					}
 					if (type != null && type != BlockType.AIR) {
-						BlockManager.getBlock(type).render(sb, x * ChunkManager.TILE_SIZE + (startX * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), y * ChunkManager.TILE_SIZE + (startY * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), getLightValue(x, y));
+						BlockManager.getBlock(type).render(camera, sb, x * ChunkManager.TILE_SIZE + (startX * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), y * ChunkManager.TILE_SIZE + (startY * Chunk.CHUNK_SIZE * ChunkManager.TILE_SIZE), getLightValue(x, y));
 					}
 				}
 			}

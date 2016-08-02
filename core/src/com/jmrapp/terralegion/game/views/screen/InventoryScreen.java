@@ -207,7 +207,6 @@ public class InventoryScreen implements Screen {
 	@Override
 	public void render(SpriteBatch sb) {
 		sb.setProjectionMatrix(camera.combined);
-		sb.begin();
 		sb.draw(bg, 0, 0);
 		itemNameLabel.render(sb);
 		itemInfoLabel.render(sb);
@@ -216,7 +215,6 @@ public class InventoryScreen implements Screen {
 		invBtn.render(sb);
 		dropBtn.render(sb);
 		splitBtn.render(sb);
-		sb.end();
 
 		stage.draw();
 	}

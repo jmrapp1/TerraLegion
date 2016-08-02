@@ -6,7 +6,10 @@ import com.jmrapp.terralegion.engine.views.drawables.AnimationDrawable;
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.SpriteSheet;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
+import com.jmrapp.terralegion.game.item.ItemManager;
+import com.jmrapp.terralegion.game.item.ItemStack;
 import com.jmrapp.terralegion.game.item.inventory.Inventory;
+import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.entity.Drop;
 import com.jmrapp.terralegion.game.world.entity.LivingEntity;
@@ -20,6 +23,8 @@ public class Player extends LivingEntity {
 	public Player(float x, float y) {
 		super(createAnimationDrawable(), x, y, BodyType.DYNAMIC, 12f, 100, 100, 6.5f);
 		inventory = new Inventory(5, 8);
+
+		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.WOOD_CHEST), 1);
 	}
 
     private static AnimationDrawable createAnimationDrawable() {
