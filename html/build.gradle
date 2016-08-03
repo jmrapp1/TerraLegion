@@ -7,8 +7,8 @@ gwt {
     minHeapSize="1G"
 
     src = files(file("src/")) // Needs to be in front of "modules" below.
-    modules 'com.jmr.physics.GdxDefinition'
-    devModules 'com.jmr.physics.GdxDefinitionSuperdev'
+    modules 'com.jmrapp.terralegion.GdxDefinition'
+    devModules 'com.jmrapp.terralegion.GdxDefinitionSuperdev'
     project.webAppDirName = 'webapp'
 
     compiler {
