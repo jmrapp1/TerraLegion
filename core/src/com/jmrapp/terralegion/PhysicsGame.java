@@ -80,6 +80,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("wood", atlas, "wood");
         ResourceManager.getInstance().loadAtlasRegionDrawable("dummyTile", atlas, "dummyTile");
         ResourceManager.getInstance().loadAtlasRegionDrawable("blankTile", atlas, "blankTile");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("chest", atlas, "chest");
 
         //DROPS
         ResourceManager.getInstance().loadAtlasRegionDrawable("dirtDrop", atlas, "dirtDrop");
