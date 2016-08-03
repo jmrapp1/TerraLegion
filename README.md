@@ -47,7 +47,7 @@ https://www.youtube.com/watch?v=-z4o8CwJR8E
 
 **Images**
 
-![](http://i.imgur.com/PcQ9tUH.png)
+![](https://camo.githubusercontent.com/65dda2ad703758f018a1b6d1c7d57ba60ddb52b8/687474703a2f2f692e696d6775722e636f6d2f614b3465644c792e706e67)
 ![](http://i.imgur.com/5OkJRLT.png)
 
 ### License
