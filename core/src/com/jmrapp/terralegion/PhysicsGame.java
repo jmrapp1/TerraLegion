@@ -35,7 +35,6 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadTexture("joystickBg", "ui/joystickBg.png");
         ResourceManager.getInstance().loadTexture("joystickKnob", "ui/joystickKnob.png");
         ResourceManager.getInstance().loadTexture("bg", "bg.png");
-        ResourceManager.getInstance().loadTexture("player", "player.png");
         ResourceManager.getInstance().loadTexture("playerAnimated", "player_animated.png");
 
         ResourceManager.getInstance().loadTexture("leftBtn", "ui/leftBtn.png");
@@ -82,6 +81,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("blankTile", atlas, "blankTile");
         ResourceManager.getInstance().loadAtlasRegionDrawable("chest", atlas, "chest");
 
+        atlas = new TextureAtlas(Gdx.files.internal("tiles/drops.atlas"));
         //DROPS
         ResourceManager.getInstance().loadAtlasRegionDrawable("dirtDrop", atlas, "dirtDrop");
         ResourceManager.getInstance().loadAtlasRegionDrawable("grassDrop", atlas, "grassDrop");
@@ -91,7 +91,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("coalDrop", atlas, "coalDrop");
         ResourceManager.getInstance().loadAtlasRegionDrawable("leavesDrop", atlas, "leavesDrop");
         ResourceManager.getInstance().loadAtlasRegionDrawable("woodDrop", atlas, "woodDrop");
-        ResourceManager.getInstance().loadTexturedDrawable("stickDrop", "tiles/drops/stickDrop.png");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("stickDrop", atlas, "stickDrop");
 
         //ITEMS
         ResourceManager.getInstance().loadTexturedDrawable("woodenPickaxe", "items/woodenPickaxe.png");

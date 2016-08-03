@@ -6,147 +6,91 @@ filter: Linear,Linear
 repeat: none
 blankTile
   rotate: false
-  xy: 1, 19
+  xy: 1, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 coal
   rotate: false
-  xy: 35, 19
+  xy: 35, 1
   size: 32, 32
   orig: 32, 32
-  offset: 0, 0
-  index: -1
-coalDrop
-  rotate: false
-  xy: 1, 1
-  size: 16, 16
-  orig: 16, 16
   offset: 0, 0
   index: -1
 diamond
   rotate: false
-  xy: 69, 19
+  xy: 69, 1
   size: 32, 32
   orig: 32, 32
-  offset: 0, 0
-  index: -1
-diamondDrop
-  rotate: false
-  xy: 409, 35
-  size: 16, 16
-  orig: 16, 16
   offset: 0, 0
   index: -1
 dirt
   rotate: false
-  xy: 103, 19
+  xy: 103, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-dirtDrop
-  rotate: false
-  xy: 19, 1
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: -1
 dirtWall
   rotate: false
-  xy: 137, 19
+  xy: 137, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 dummyTile
   rotate: false
-  xy: 171, 19
+  xy: 171, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 grass
   rotate: false
-  xy: 205, 19
+  xy: 205, 1
   size: 32, 32
   orig: 32, 32
-  offset: 0, 0
-  index: -1
-grassDrop
-  rotate: false
-  xy: 427, 35
-  size: 16, 16
-  orig: 16, 16
   offset: 0, 0
   index: -1
 leaves
   rotate: false
-  xy: 239, 19
+  xy: 239, 1
   size: 32, 32
   orig: 32, 32
-  offset: 0, 0
-  index: -1
-leavesDrop
-  rotate: false
-  xy: 37, 1
-  size: 16, 16
-  orig: 16, 16
   offset: 0, 0
   index: -1
 stone
   rotate: false
-  xy: 273, 19
+  xy: 273, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-stoneDrop
-  rotate: false
-  xy: 445, 35
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: -1
 stoneWall
   rotate: false
-  xy: 307, 19
+  xy: 307, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 torch
   rotate: false
-  xy: 341, 19
+  xy: 341, 1
   size: 32, 32
   orig: 32, 32
-  offset: 0, 0
-  index: -1
-torchDrop
-  rotate: false
-  xy: 55, 1
-  size: 16, 16
-  orig: 16, 16
   offset: 0, 0
   index: -1
 wood
   rotate: false
-  xy: 375, 19
+  xy: 375, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-woodDrop
-  rotate: false
-  xy: 463, 35
-  size: 16, 16
-  orig: 16, 16
-  offset: 0, 0
-  index: -1
 chest
   rotate: false
-  xy: 480, 19
+  xy: 409, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
