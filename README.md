@@ -1,4 +1,4 @@
-# TerraLegion  [![Build Status](https://travis-ci.org/jmrapp1/TerraLegion.svg?branch=master)](https://travis-ci.org/jmrapp1/TerraLegion)
+# TerraLegion 
 
 A clone of the popular game, Terraria, developed using Java and the LibGDX framework. The reason that this project is open-source is to encourage community contributions and create a game centered around the development done by those in the gaming community. Contributions are heavily welcomed and I would love to see developers being able to place their own mark on the game. The name "TerraLegion" was heavily influenced by the idea of community contributions. "Terra" making a reference to "Terraria", the inspiration of this game, and "Legion" referring to the army of developers behind it.
 
