@@ -3,7 +3,7 @@ android:
   components:
     - build-tools-24.0.0
     - android-20
-jdk: oraclejdk7
+jdk: oraclejdk8
 
 cache:
   directories:
