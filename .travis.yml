@@ -16,15 +16,12 @@ before_install:
 script:
 - ./ci/build_desktop.sh
 - ./ci/build_android.sh
-- ./ci/build_ios.sh
-- ./ci/build_html.sh
 
 script:
   - "./gradlew build -PversionCode=$TRAVIS_BUILD_NUMBER"
 before_deploy:
 - ./ci/deploy_desktop.sh
 - ./ci/deploy_android.sh
-- ./ci/deploy_html.sh
   
 notifications:
   email: false
