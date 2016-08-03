@@ -144,3 +144,10 @@ woodDrop
   orig: 16, 16
   offset: 0, 0
   index: -1
+chest
+  rotate: false
+  xy: 480, 19
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1

@@ -1,6 +1,7 @@
 package com.jmrapp.terralegion.game.world.block;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.jmrapp.terralegion.engine.views.drawables.Drawable;
@@ -31,7 +32,7 @@ public class Block {
 		this.resistance = resistance;
 	}
 
-	public void render(SpriteBatch sb, float x, float y, float lightValue) {
+	public void render(OrthographicCamera camera, SpriteBatch sb, float x, float y, float lightValue) {
 		float value = lightValue < LightUtils.MIN_LIGHT_VALUE ? LightUtils.MIN_LIGHT_VALUE : lightValue;
 		sb.setColor(value, value, value, 1);
 		drawable.render(sb, x, y);
