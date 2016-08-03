@@ -5,7 +5,7 @@
 	<inherits name='Box2DLights' />
 
 	<inherits name='PhysicsGame' />
-	<entry-point class='com.jmr.terraria.client.HtmlLauncher' />
+	<entry-point class='com.jmrapp.terralegion.client.HtmlLauncher' />
 	
 	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>

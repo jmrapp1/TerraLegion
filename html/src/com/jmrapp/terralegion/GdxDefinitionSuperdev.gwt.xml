@@ -4,7 +4,7 @@
 	<inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
 	<inherits name='Box2DLights' />
 
-    <inherits name='com.jmr.physics.GdxDefinition' />
+    <inherits name='com.jmrapp.terralegion.GdxDefinition' />
     
     <collapse-all-properties />
     
