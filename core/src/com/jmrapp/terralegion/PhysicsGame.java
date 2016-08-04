@@ -132,8 +132,9 @@ public class PhysicsGame implements ApplicationListener {
         Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
         Gdx.gl20.glClearColor(0f, 0f, 0f, 1);
 
-        if (ScreenManager.getCurrent() != null)
+        if (ScreenManager.getCurrent() != null) {
             ScreenManager.getCurrent().render(sb);
+        }
     }
 
     @Override
