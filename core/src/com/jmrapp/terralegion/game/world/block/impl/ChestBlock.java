@@ -44,16 +44,6 @@ public class ChestBlock extends InventoryBlock {
     public void render(OrthographicCamera camera, SpriteBatch sb, float x, float y, float lightValue) {
         super.render(camera, sb, x, y, lightValue);;
 
-        if(this.isOpen()){
-            this.inventoryScreen.update();;
-
-            this.inventoryScreen.render(sb);
-
-            if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
-                this.close();
-            }
-        }
-
         if(this.isTapped(camera, x, y)){
            this.open();
         }
@@ -93,6 +83,8 @@ public class ChestBlock extends InventoryBlock {
      * Opens the inventory display
      */
     public void open(){
+        ScreenManager.setScreen(this.inventoryScreen);
+
         this.open = true;
     }
 
