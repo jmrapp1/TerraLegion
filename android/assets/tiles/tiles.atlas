@@ -6,91 +6,91 @@ filter: Linear,Linear
 repeat: none
 blankTile
   rotate: false
-  xy: 1, 1
+  xy: 0, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 coal
   rotate: false
-  xy: 35, 1
+  xy: 32, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 diamond
   rotate: false
-  xy: 69, 1
+  xy: 64, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 dirt
   rotate: false
-  xy: 103, 1
+  xy: 96, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 dirtWall
   rotate: false
-  xy: 137, 1
+  xy: 128, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 dummyTile
   rotate: false
-  xy: 171, 1
+  xy: 160, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 grass
   rotate: false
-  xy: 205, 1
+  xy: 192, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 leaves
   rotate: false
-  xy: 239, 1
+  xy: 224, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stone
   rotate: false
-  xy: 273, 1
+  xy: 256, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 stoneWall
   rotate: false
-  xy: 307, 1
+  xy: 288, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 torch
   rotate: false
-  xy: 341, 1
+  xy: 320, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 wood
   rotate: false
-  xy: 375, 1
+  xy: 352, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 chest
   rotate: false
-  xy: 409, 1
+  xy: 384, 0
   size: 32, 32
   orig: 32, 32
   offset: 0, 0

@@ -6,63 +6,63 @@ filter: Linear,Linear
 repeat: none
 coalDrop
   rotate: false
-  xy: 1, 1
+  xy: 0, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 dirtDrop
   rotate: false
-  xy: 19, 1
+  xy: 16, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 leavesDrop
   rotate: false
-  xy: 37, 1
+  xy: 32, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 torchDrop
   rotate: false
-  xy: 55, 1
+  xy: 48, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 diamondDrop
   rotate: false
-  xy: 73, 1
+  xy: 64, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 grassDrop
   rotate: false
-  xy: 91, 1
+  xy: 80, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 stoneDrop
   rotate: false
-  xy: 109, 1
+  xy: 96, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 woodDrop
   rotate: false
-  xy: 127, 1
+  xy: 112, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 stickDrop
   rotate: false
-  xy: 145, 1
+  xy: 128, 0
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
