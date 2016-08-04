@@ -2,7 +2,7 @@
 tiles.png
 size: 512,64
 format: RGBA8888
-filter: Linear,Linear
+filter: Nearest,Nearest
 repeat: none
 blankTile
   rotate: false
