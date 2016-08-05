@@ -95,3 +95,38 @@ chest
   orig: 32, 32
   offset: 0, 0
   index: -1
+covergrass
+    rotate: false
+       xy: 0, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+crop0
+    rotate: false
+       xy: 32, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+crop1
+    rotate: false
+       xy: 64, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+crop2
+    rotate: false
+       xy: 96, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+crop3
+    rotate: false
+       xy: 128, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1

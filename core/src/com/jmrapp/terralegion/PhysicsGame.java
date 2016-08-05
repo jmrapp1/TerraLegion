@@ -80,6 +80,11 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("dummyTile", atlas, "dummyTile");
         ResourceManager.getInstance().loadAtlasRegionDrawable("blankTile", atlas, "blankTile");
         ResourceManager.getInstance().loadAtlasRegionDrawable("chest", atlas, "chest");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("covergrass", atlas, "covergrass");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("crop0", atlas, "crop0");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("crop1", atlas, "crop1");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("crop2", atlas, "crop2");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("crop3", atlas, "crop3");
 
         atlas = new TextureAtlas(Gdx.files.internal("tiles/drops.atlas"));
         //DROPS
@@ -97,6 +102,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadTexturedDrawable("woodenPickaxe", "items/woodenPickaxe.png");
         ResourceManager.getInstance().loadTexturedDrawable("sword", "items/sword.png");
         ResourceManager.getInstance().loadTexturedDrawable("stick", "items/stick.png");
+        ResourceManager.getInstance().loadTexturedDrawable("seed", "items/seed.png");
 
         //FONTS
         ResourceManager.getInstance().loadFont("font", "fonts/source-sans-pro-regular.ttf", Color.WHITE, 20);

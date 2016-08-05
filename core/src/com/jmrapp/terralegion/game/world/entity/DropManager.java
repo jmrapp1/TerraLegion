@@ -27,6 +27,11 @@ public class DropManager {
         drops.put(ItemType.WOODEN_PICKAXE.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.WOODEN_PICKAXE), ResourceManager.getInstance().getDrawable("woodenPickaxe")));
         drops.put(ItemType.SWORD.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.SWORD), ResourceManager.getInstance().getDrawable("sword")));
         drops.put(ItemType.STICK.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.STICK), ResourceManager.getInstance().getDrawable("stickDrop")));
+        drops.put(BlockType.COVER_GRASS.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.SEED), ResourceManager.getInstance().getDrawable("seed")));
+        drops.put(BlockType.CROP_BLOCK_0.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.SEED), ResourceManager.getInstance().getDrawable("seed")));
+        drops.put(BlockType.CROP_BLOCK_1.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.SEED), ResourceManager.getInstance().getDrawable("seed")));
+        drops.put(BlockType.CROP_BLOCK_2.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.SEED), ResourceManager.getInstance().getDrawable("seed")));
+        drops.put(BlockType.CROP_BLOCK_3.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.SEED), ResourceManager.getInstance().getDrawable("seed")));
     }
 
     public Drop getDrop(BlockType type, int stackCount, float x, float y) {
