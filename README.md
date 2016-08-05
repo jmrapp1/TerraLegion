@@ -42,12 +42,11 @@ When adding your own features to the game or modifying existing code, there are 
 9. Apply the changes and press *OK*. 
 10. You should now be able to run the game from Desktop and Android using the two run configurations.
 
-### Gallery
+### Gallery (Artwork done by [Kenny](http://kenney.nl/))
 **Video:**
 https://www.youtube.com/watch?v=-z4o8CwJR8E
 
 **Images**
-Artwork done by [Kenny](http://kenney.nl/)
 ![](https://cloud.githubusercontent.com/assets/7306503/17391892/7f93f3f2-59ce-11e6-8e88-9a50d4074c0c.png)
 ![](https://cloud.githubusercontent.com/assets/7306503/17390271/5988fdaa-59c0-11e6-9000-9f74783870ce.png)
 
