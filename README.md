@@ -47,7 +47,7 @@ When adding your own features to the game or modifying existing code, there are 
 https://www.youtube.com/watch?v=-z4o8CwJR8E
 
 **Images**
-
+Artwork done by [Kenny](http://kenney.nl/)
 ![](https://cloud.githubusercontent.com/assets/7306503/17391892/7f93f3f2-59ce-11e6-8e88-9a50d4074c0c.png)
 ![](https://cloud.githubusercontent.com/assets/7306503/17390271/5988fdaa-59c0-11e6-9000-9f74783870ce.png)
 
