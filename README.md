@@ -48,8 +48,8 @@ https://www.youtube.com/watch?v=-z4o8CwJR8E
 
 **Images**
 
-![](https://camo.githubusercontent.com/65dda2ad703758f018a1b6d1c7d57ba60ddb52b8/687474703a2f2f692e696d6775722e636f6d2f614b3465644c792e706e67)
-![](http://i.imgur.com/5OkJRLT.png)
+![](https://cloud.githubusercontent.com/assets/7306503/17391892/7f93f3f2-59ce-11e6-8e88-9a50d4074c0c.png)
+![](https://cloud.githubusercontent.com/assets/7306503/17390271/5988fdaa-59c0-11e6-9000-9f74783870ce.png)
 
 ### License
 The MIT License (MIT)
