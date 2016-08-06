@@ -35,7 +35,7 @@ public class HillGenerator implements WorldGenerator {
 		chunk.setBlock(BlockType.GRASS, x, finalY, false);
 		chunk.setWall(BlockType.DIRT_WALL, x, finalY, false);
 
-		if(this.grassRandom.nextInt(5) == 1){
+		if(grassRandom.nextInt(5) == 1) {
 			chunk.setBlock(BlockType.COVER_GRASS, x, finalY + 1, false);
 		}
 
