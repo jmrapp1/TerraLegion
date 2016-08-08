@@ -67,3 +67,10 @@ stickDrop
   orig: 16, 16
   offset: 0, 0
   index: -1
+seed
+  rotate: false
+  xy: 144, 0
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1

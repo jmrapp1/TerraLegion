@@ -6,10 +6,13 @@ import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class HillGenerator implements WorldGenerator {
 
 	private OreGenerator oreGen;
+
+	private Random grassRandom = new Random();
 
 	public HillGenerator(OreGenerator oreGen) {
 		this.oreGen = oreGen;
@@ -31,6 +34,10 @@ public class HillGenerator implements WorldGenerator {
 		//SET GRASS
 		chunk.setBlock(BlockType.GRASS, x, finalY, false);
 		chunk.setWall(BlockType.DIRT_WALL, x, finalY, false);
+
+		if(grassRandom.nextInt(5) == 1) {
+			chunk.setBlock(BlockType.COVER_GRASS, x, finalY + 1, false);
+		}
 
 		//DETERMINE WHETHER TO GENERATE TREE
 		float treeFreq = 1.0f / Chunk.CHUNK_SIZE;

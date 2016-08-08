@@ -2,6 +2,7 @@ package com.jmrapp.terralegion.game.world.block;
 
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.game.world.block.impl.ChestBlock;
+import com.jmrapp.terralegion.game.world.block.impl.CoverGrassBlock;
 import com.jmrapp.terralegion.game.world.block.impl.LightBlock;
 import com.jmrapp.terralegion.game.world.block.impl.WoodBlock;
 
@@ -25,6 +26,7 @@ public class BlockManager {
 		blocks.put(BlockType.WOOD, new WoodBlock(BlockType.WOOD, ResourceManager.getInstance().getDrawable("wood"), .15f, true, true, .6f, .3f));
 		blocks.put(BlockType.LEAVES, new Block(BlockType.LEAVES, ResourceManager.getInstance().getDrawable("leaves"), .15f, true, false, .5f, .1f));
 		blocks.put(BlockType.WOOD_CHEST, new ChestBlock(3, 3, BlockType.WOOD_CHEST, ResourceManager.getInstance().getDrawable("chest"), .15f, true, false, 5f, .1f));
+		blocks.put(BlockType.COVER_GRASS, new CoverGrassBlock());
 	}
 	
 	public static Block getBlock(BlockType type) {
