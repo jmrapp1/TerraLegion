@@ -178,6 +178,20 @@ public class GameHud {
             sb.begin();
             blankTile.render(sb, highlightedBlockPosition.x, highlightedBlockPosition.y);
             sb.end();
+
+            if(Gdx.input.isTouched()){
+                for(InventoryBox inventoryBox : inventoryBoxes){
+                    if(inventoryBox.isSelected() && !(inventoryBox.getItemStack() == null)) {
+                        Vector2 touchPosition = gameCamera.unprojectCoordinates(Gdx.input.getX(), Gdx.input.getY());
+
+                        Drawable icon = inventoryBox.getItemStack().getItem().getIcon();
+
+                        sb.begin();
+                        icon.render(sb, touchPosition.x + icon.getWidth() * 1.5f, touchPosition.y); //drawn slightly to the side to avoid your finger overlapping the icon
+                        sb.end();
+                    }
+                }
+            }
         }
 
         sb.setProjectionMatrix(camera.combined);
