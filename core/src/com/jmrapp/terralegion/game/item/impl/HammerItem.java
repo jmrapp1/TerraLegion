@@ -2,6 +2,7 @@ package com.jmrapp.terralegion.game.item.impl;
 
 import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.game.item.ItemType;
+import com.jmrapp.terralegion.game.world.World;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 
 /**
@@ -17,4 +18,8 @@ public class HammerItem extends ToolItem {
 		return false;
 	}
 
+	@Override
+	public void onUse(World world, float touchX, float touchY) {
+
+	}
 }

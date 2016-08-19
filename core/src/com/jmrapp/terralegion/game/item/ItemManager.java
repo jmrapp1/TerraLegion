@@ -3,6 +3,7 @@ package com.jmrapp.terralegion.game.item;
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.game.item.impl.BlockItem;
 import com.jmrapp.terralegion.game.item.impl.PickaxeItem;
+import com.jmrapp.terralegion.game.item.impl.SeedItem;
 import com.jmrapp.terralegion.game.item.impl.SwordItem;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 
@@ -31,7 +32,7 @@ public class ItemManager {
 		items.put(ItemType.STICK.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
 		items.put(BlockType.WOOD_CHEST.getId(), new BlockItem(BlockType.WOOD_CHEST, ItemCategory.BLOCK, "Wooden Chest", ResourceManager.getInstance().getDrawable("chest"), 64));
 		items.put(BlockType.COVER_GRASS.getId(), new BlockItem(BlockType.COVER_GRASS, ItemCategory.BLOCK, "Cover Grass", ResourceManager.getInstance().getDrawable("covergrass"), 64));
-		items.put(ItemType.SEED.getId(), new Item(ItemType.SEED.getId(), ItemCategory.MISC, "Seed", ResourceManager.getInstance().getDrawable("seed"), 64));
+		items.put(ItemType.SEED.getId(), new SeedItem(ItemType.SEED.getId(), ItemCategory.MISC, "Seed", ResourceManager.getInstance().getDrawable("seed"), 64, 1.0f));
 	}
 
 	public Item getItem(ItemType type) {

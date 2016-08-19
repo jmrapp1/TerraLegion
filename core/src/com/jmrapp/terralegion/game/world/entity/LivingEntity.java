@@ -11,6 +11,7 @@ import com.jmrapp.terralegion.engine.world.collision.CollisionSide;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.engine.world.entity.WorldBody;
 import com.jmrapp.terralegion.game.item.impl.ToolItem;
+import com.jmrapp.terralegion.game.item.impl.UsableItem;
 import com.jmrapp.terralegion.game.utils.LightUtils;
 
 /**
@@ -98,7 +99,7 @@ public abstract class LivingEntity extends TexturedEntity {
 		lastToolUsedTime = Timer.getGameTimeElapsed();
 	}
 
-	public boolean canUseTool(ToolItem item) {
+	public boolean canUseItem(UsableItem item) {
 		return Timer.getGameTimeElapsed() - lastToolUsedTime >= item.getUseDelay();
 	}
 

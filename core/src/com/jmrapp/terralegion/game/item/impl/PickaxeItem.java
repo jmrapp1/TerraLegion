@@ -2,6 +2,7 @@ package com.jmrapp.terralegion.game.item.impl;
 
 import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.game.item.ItemType;
+import com.jmrapp.terralegion.game.world.World;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 
 /**
@@ -22,4 +23,8 @@ public class PickaxeItem extends ToolItem {
 		return damage + " melee damage\n" + useDelay + " speed\n" + (power * 100) + "% pickaxe power";
 	}
 
+	@Override
+	public void onUse(World world, float touchX, float touchY) {
+
+	}
 }
