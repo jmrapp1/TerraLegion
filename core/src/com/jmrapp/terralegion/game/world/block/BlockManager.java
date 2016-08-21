@@ -27,8 +27,8 @@ public class BlockManager {
 		blocks.put(BlockType.WOOD, new WoodBlock(BlockType.WOOD, ResourceManager.getInstance().getDrawable("wood"), .15f, true, true, .6f, .3f));
 		blocks.put(BlockType.LEAVES, new Block(BlockType.LEAVES, ResourceManager.getInstance().getDrawable("leaves"), .15f, true, false, .5f, .1f));
 		blocks.put(BlockType.WOOD_CHEST, new ChestBlock(3, 3, BlockType.WOOD_CHEST, ResourceManager.getInstance().getDrawable("chest"), .15f, true, false, 5f, .1f));
-		blocks.put(BlockType.COVER_GRASS, new CoverGrassBlock());
-		blocks.put(BlockType.CROP_BLOCK_0, new CropBlock());
+		blocks.put(BlockType.COVER_GRASS, new CoverGrassBlock(BlockType.COVER_GRASS, ResourceManager.getInstance().getDrawable("covergrass"), .01f, false, false, .1f, .1f));
+		blocks.put(BlockType.CROP_BLOCK_0, new CropBlock(BlockType.CROP_BLOCK_0, ResourceManager.getInstance().getDrawable("crop0"), 0.1f, false, true, 0.1f, 0.1f));
 	}
 	
 	public static Block getBlock(BlockType type) {
