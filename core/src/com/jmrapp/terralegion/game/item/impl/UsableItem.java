@@ -12,6 +12,9 @@ import com.jmrapp.terralegion.game.world.World;
  */
 public abstract class UsableItem extends Item {
 
+    /** How far away the item can reach from the origin. */
+    protected float reach;
+
     protected float useDelay;
 
     public UsableItem(int typeId, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay){
@@ -25,10 +28,15 @@ public abstract class UsableItem extends Item {
      * @param world The world in which the item was used
      * @param touchX The x position at which the item was used
      * @param touchY The y position at which the item was used
+     * @return Whether the highlighted block position should be set to the tool use position
      */
-    public abstract void onUse(World world, float touchX, float touchY);
+    public abstract boolean onUse(World world, float touchX, float touchY);
 
     public float getUseDelay() {
         return useDelay;
+    }
+
+    public float getReach() {
+        return reach;
     }
 }

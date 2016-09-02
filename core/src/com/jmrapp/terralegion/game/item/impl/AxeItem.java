@@ -19,7 +19,7 @@ public class AxeItem extends ToolItem {
 	}
 
 	@Override
-	public void onUse(World world, float touchX, float touchY) {
-
+	public boolean onUse(World world, float touchX, float touchY) {
+		return false;
 	}
 }

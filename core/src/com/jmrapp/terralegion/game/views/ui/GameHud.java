@@ -138,23 +138,16 @@ public class GameHud {
                 if(selectedItemStack.getItem() instanceof UsableItem){
                     UsableItem item = ((UsableItem) selectedItemStack.getItem());
 
-                    if(world.getPlayer().canUseItem(item)){
-                        item.onUse(world, touchX, touchY);
-                    }
-                }
-
-                if (selectedItemStack.getItem() instanceof ToolItem) {
-                    ToolItem tool = (ToolItem) selectedItemStack.getItem();
-                    if (position.dst(origin) <= tool.getReach()) {
-                        BlockType type = world.getChunkManager().getBlockFromPos(touchX, touchY);
-                        if (tool.canDamageBlock(type)) {
-                            highlightedBlockPosition.set(((int)touchX / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE, ((int)touchY / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE);
-                            if (world.getPlayer().canUseItem(tool))
-                                if (world.getChunkManager().damageBlock(touchX, touchY, tool.getPower()))
-                                    world.getPlayer().usedTool();
+                    if(new Vector2(touchX, touchY).dst(world.getPlayer().getX(), world.getPlayer().getY()) <= item.getReach()){
+                        if(item.onUse(world, touchX, touchY)) {
+                            highlightedBlockPosition.set(((int) touchX / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE, ((int) touchY / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE);
                         }
                     }
-                } else if (selectedItemStack.getItem() instanceof BlockItem) {
+
+
+                }
+
+                if (selectedItemStack.getItem() instanceof BlockItem) {
                     if (position.dst(origin) <= 100) {
                         BlockType type = world.getChunkManager().getBlockFromPos(touchX, touchY);
                         if (type == BlockType.AIR) {

@@ -1,5 +1,6 @@
 package com.jmrapp.terralegion.game.item.impl;
 
+import com.badlogic.gdx.math.Vector2;
 import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.game.item.ItemType;
 import com.jmrapp.terralegion.game.world.World;
@@ -19,7 +20,8 @@ public class SwordItem extends CombatItem {
 	}
 
 	@Override
-	public void onUse(World world, float touchX, float touchY) {
-
+	public boolean onUse(World world, float touchX, float touchY) {
+		world.getChunkManager().getChunkFromPos(touchX, touchY).damageEntity(touchX, touchY, 0.1f);
+		return false;
 	}
 }
