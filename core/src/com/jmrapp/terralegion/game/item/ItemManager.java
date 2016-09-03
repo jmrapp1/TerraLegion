@@ -33,6 +33,9 @@ public class ItemManager {
 		items.put(BlockType.WOOD_CHEST.getId(), new BlockItem(BlockType.WOOD_CHEST, ItemCategory.BLOCK, "Wooden Chest", ResourceManager.getInstance().getDrawable("chest"), 64));
 		items.put(BlockType.COVER_GRASS.getId(), new BlockItem(BlockType.COVER_GRASS, ItemCategory.BLOCK, "Cover Grass", ResourceManager.getInstance().getDrawable("covergrass"), 64));
 		items.put(ItemType.SEED.getId(), new SeedItem(ItemType.SEED.getId(), ItemCategory.MISC, "Seed", ResourceManager.getInstance().getDrawable("seed"), 64, 1.0f));
+		items.put(BlockType.MUSHROOM_BROWN.getId(), new BlockItem(BlockType.MUSHROOM_BROWN, ItemCategory.MISC, "Brown Mushroom", ResourceManager.getInstance().getDrawable("mushroom0"), 64));
+		items.put(BlockType.MUSHROOM_RED.getId(), new BlockItem(BlockType.MUSHROOM_RED, ItemCategory.MISC, "Red Mushroom", ResourceManager.getInstance().getDrawable("mushroom1"), 64));
+		items.put(BlockType.MUSHROOM.getId(), new BlockItem(BlockType.MUSHROOM, ItemCategory.MISC, "Mushroom", ResourceManager.getInstance().getDrawable("mushroom2"), 64));
 	}
 
 	public Item getItem(ItemType type) {

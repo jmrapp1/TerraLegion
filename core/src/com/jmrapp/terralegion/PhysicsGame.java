@@ -85,6 +85,9 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("crop1", atlas, "crop1");
         ResourceManager.getInstance().loadAtlasRegionDrawable("crop2", atlas, "crop2");
         ResourceManager.getInstance().loadAtlasRegionDrawable("crop3", atlas, "crop3");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("mushroom0", atlas, "mushroom0");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("mushroom1", atlas, "mushroom1");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("mushroom2", atlas, "mushroom2");
 
         atlas = new TextureAtlas(Gdx.files.internal("tiles/drops.atlas"));
         //DROPS

@@ -7,6 +7,8 @@ import java.util.Random;
 
 public class TreeGenerator {
 
+    private static final BlockType[] MUSHROOMS = {BlockType.MUSHROOM_BROWN, BlockType.MUSHROOM_RED, BlockType.MUSHROOM};
+
     public static void generateTree(Chunk chunk, int x, int y) {
         int randomNum1 = getRandomNumber(1, 4);
         int leavesLength;
@@ -39,6 +41,10 @@ public class TreeGenerator {
             chunk.setBlock(BlockType.LEAVES, x+1, y+stemLength-i, false);
         }
         chunk.setBlock(BlockType.LEAVES, x, y+stemLength, false);
+
+        if(getRandomNumber(1, 5) == 4){
+            chunk.setBlock(MUSHROOMS[getRandomNumber(0, MUSHROOMS.length-1)], x, y+stemLength + 1, false);
+        }
     }
 
     private static int getRandomNumber(int min, int max) {

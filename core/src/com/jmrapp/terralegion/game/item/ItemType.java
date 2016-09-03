@@ -2,7 +2,7 @@ package com.jmrapp.terralegion.game.item;
 
 public enum ItemType {
 
-	WOODEN_PICKAXE(7), SWORD(12), STICK(13), SEED(20);
+	WOODEN_PICKAXE(7), SWORD(12), STICK(13), SEED(20), MUSHROOM_BROWN(24), MUSHROOM_RED(25), MUSHROOM(26);
 
 	private final int id;
 
