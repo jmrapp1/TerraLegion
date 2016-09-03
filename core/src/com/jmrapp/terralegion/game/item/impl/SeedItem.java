@@ -19,7 +19,7 @@ public class SeedItem extends UsableItem {
     }
 
     @Override
-    public void onUse(World world, float touchX, float touchY) {
+    public boolean onUse(World world, float touchX, float touchY) {
         ChunkManager manager = world.getChunkManager();
 
         int tileX = manager.pixelToTilePosition(touchX);
@@ -33,5 +33,7 @@ public class SeedItem extends UsableItem {
 
             world.getPlayer().getInventory().removeItemStack(this, 1);
         }
+
+        return false;
     }
 }

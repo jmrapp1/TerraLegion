@@ -1,9 +1,11 @@
 package com.jmrapp.terralegion.game.item.impl;
 
+import com.badlogic.gdx.math.Vector2;
 import com.jmrapp.terralegion.engine.views.drawables.Drawable;
 import com.jmrapp.terralegion.game.item.ItemType;
 import com.jmrapp.terralegion.game.world.World;
 import com.jmrapp.terralegion.game.world.block.BlockType;
+import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
 
 /**
  * Created by Jon on 10/6/15.
@@ -24,7 +26,15 @@ public class PickaxeItem extends ToolItem {
 	}
 
 	@Override
-	public void onUse(World world, float touchX, float touchY) {
+	public boolean onUse(World world, float touchX, float touchY) {
+		BlockType type = world.getChunkManager().getBlockFromPos(touchX, touchY);
+			if (this.canDamageBlock(type)) {
+				if (world.getPlayer().canUseItem(this) && world.getChunkManager().damageBlock(touchX, touchY, this.getPower())) {
+					world.getPlayer().usedTool();
+				}
+				return true;
+			}
 
+		return false;
 	}
 }

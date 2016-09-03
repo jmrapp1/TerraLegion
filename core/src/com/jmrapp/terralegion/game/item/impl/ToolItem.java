@@ -14,9 +14,6 @@ public abstract class ToolItem extends UsableItem {
 	/** The amount of damage dealt by the item. */
 	protected float damage;
 
-	/** How far away the tool can reach from the origin. */
-	protected float reach;
-
 	/** The power the tool has when being used. */
 	protected float power;
 
@@ -29,10 +26,6 @@ public abstract class ToolItem extends UsableItem {
 		this.type = type;
 		this.reach = reach;
 		this.useDelay = useDelay;
-	}
-
-	public float getReach() {
-		return reach;
 	}
 
 	public abstract boolean canDamageBlock(BlockType type);
