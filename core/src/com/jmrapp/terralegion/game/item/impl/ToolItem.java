@@ -20,11 +20,10 @@ public abstract class ToolItem extends UsableItem {
 	protected ItemType type;
 
 	public ToolItem(ItemType type, String name, Drawable icon, int maxItemStack, float damage, float power, float reach, float useDelay) {
-		super(type.getId(), ItemCategory.TOOL, name, icon, maxItemStack, useDelay);
+		super(type.getId(), ItemCategory.TOOL, name, icon, maxItemStack, useDelay, reach);
 		this.damage = damage;
 		this.power = power;
 		this.type = type;
-		this.reach = reach;
 		this.useDelay = useDelay;
 	}
 

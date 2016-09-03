@@ -17,9 +17,10 @@ public abstract class UsableItem extends Item {
 
     protected float useDelay;
 
-    public UsableItem(int typeId, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay){
+    public UsableItem(int typeId, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay, float reach){
         super(typeId, category, name, icon, maxItemStack);
         this.useDelay = useDelay;
+        this.reach = reach;
     }
 
     /**

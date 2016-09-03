@@ -15,7 +15,7 @@ import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
 public class SeedItem extends UsableItem {
 
     public SeedItem(int typeId, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay){
-        super(typeId, category, name, icon, maxItemStack, useDelay);
+        super(typeId, category, name, icon, maxItemStack, useDelay, 128);
     }
 
     @Override
