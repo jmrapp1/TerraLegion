@@ -130,3 +130,24 @@ crop3
        orig: 32, 32
        offset: 0, 0
        index: -1
+mushroom0
+    rotate: false
+       xy: 160, 48
+       size: 32, 16
+       orig: 32, 16
+       offset: 0, 0
+       index: -1
+mushroom1
+    rotate: false
+       xy: 192, 48
+       size: 32, 16
+       orig: 32, 16
+       offset: 0, 0
+       index: -1
+mushroom2
+    rotate: false
+       xy: 224, 48
+       size: 32, 16
+       orig: 32, 16
+       offset: 0, 0
+       index: -1

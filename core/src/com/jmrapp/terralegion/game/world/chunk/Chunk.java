@@ -2,6 +2,7 @@ package com.jmrapp.terralegion.game.world.chunk;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 import com.jmrapp.terralegion.engine.camera.OrthoCamera;
@@ -422,6 +423,18 @@ public class Chunk {
 	
 	public BlockType[][] getBlocks() {
 		return blocks;
+	}
+
+	/**
+	 * Damages a single entity at the given position
+     */
+	public void damageEntity(float x, float y, float damage) {
+		for(TexturedEntity entity : entities) {
+			if(entity instanceof LivingEntity && entity.getBounds().overlaps(new Rectangle(x, y, 0, 0))) {
+				((LivingEntity ) entity).damage(damage);
+				break;
+			}
+		}
 	}
 
 }

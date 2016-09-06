@@ -21,6 +21,7 @@ import com.jmrapp.terralegion.game.item.ItemStack;
 import com.jmrapp.terralegion.game.item.impl.BlockItem;
 import com.jmrapp.terralegion.game.item.impl.CombatItem;
 import com.jmrapp.terralegion.game.item.impl.ToolItem;
+import com.jmrapp.terralegion.game.item.impl.UsableItem;
 import com.jmrapp.terralegion.game.utils.Vector2Factory;
 import com.jmrapp.terralegion.game.views.screen.GameScreen;
 import com.jmrapp.terralegion.game.views.screen.InventoryScreen;
@@ -134,18 +135,19 @@ public class GameHud {
             Vector2 position = Vector2Factory.instance.getVector2(touchX, touchY);
 
             if (selectedItemStack != null) {
-                if (selectedItemStack.getItem() instanceof ToolItem) {
-                    ToolItem tool = (ToolItem) selectedItemStack.getItem();
-                    if (position.dst(origin) <= tool.getReach()) {
-                        BlockType type = world.getChunkManager().getBlockFromPos(touchX, touchY);
-                        if (tool.canDamageBlock(type)) {
-                            highlightedBlockPosition.set(((int)touchX / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE, ((int)touchY / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE);
-                            if (world.getPlayer().canUseTool(tool))
-                                if (world.getChunkManager().damageBlock(touchX, touchY, tool.getPower()))
-                                    world.getPlayer().usedTool();
+                if(selectedItemStack.getItem() instanceof UsableItem){
+                    UsableItem item = ((UsableItem) selectedItemStack.getItem());
+
+                    if(new Vector2(touchX, touchY).dst(world.getPlayer().getX(), world.getPlayer().getY()) <= item.getReach()){
+                        if(item.onUse(world, touchX, touchY)) {
+                            highlightedBlockPosition.set(((int) touchX / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE, ((int) touchY / ChunkManager.TILE_SIZE) * ChunkManager.TILE_SIZE);
                         }
                     }
-                } else if (selectedItemStack.getItem() instanceof BlockItem) {
+
+
+                }
+
+                if (selectedItemStack.getItem() instanceof BlockItem) {
                     if (position.dst(origin) <= 100) {
                         BlockType type = world.getChunkManager().getBlockFromPos(touchX, touchY);
                         if (type == BlockType.AIR) {
@@ -229,7 +231,7 @@ public class GameHud {
     }
 
     private LivingEntity findLivingEntity(ToolItem item) {
-        if (world.getPlayer().canUseTool(item)) {
+        if (world.getPlayer().canUseItem(item)) {
 
             Vector2 direction = Vector2Factory.instance.getVector2(actionControl.getTouchpad().getKnobPercentX(), actionControl.getTouchpad().getKnobPercentY()).nor(); //Get vector direction of the know
             Chunk chunk = world.getChunkManager().getChunkFromPos(world.getPlayer().getX(), world.getPlayer().getY());
@@ -259,7 +261,7 @@ public class GameHud {
                 float py = ChunkManager.tileToPixelPosition((int) foundBlockPos.y);
                 highlightedBlockPosition.set(px, py);
             }
-            if (world.getPlayer().canUseTool(tool)) {
+            if (world.getPlayer().canUseItem(tool)) {
                 if (foundBlockPos != null) { //if block found within reach
                     if (world.getChunkManager().damageBlock((int) foundBlockPos.x, (int) foundBlockPos.y, tool.getPower())) { //Damage the block
                         world.getPlayer().usedTool();

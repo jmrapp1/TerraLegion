@@ -3,6 +3,7 @@ package com.jmrapp.terralegion.game.item;
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.game.item.impl.BlockItem;
 import com.jmrapp.terralegion.game.item.impl.PickaxeItem;
+import com.jmrapp.terralegion.game.item.impl.SeedItem;
 import com.jmrapp.terralegion.game.item.impl.SwordItem;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 
@@ -27,11 +28,14 @@ public class ItemManager {
 		items.put(ItemType.WOODEN_PICKAXE.getId(), new PickaxeItem(ItemType.WOODEN_PICKAXE, "Wooden Pickaxe", ResourceManager.getInstance().getDrawable("woodenPickaxe"), 1, 4, 1.0f, 100, .5f));
 		//items.put(BlockType.WOOD.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
 		items.put(BlockType.LEAVES.getId(), new BlockItem(BlockType.LEAVES, ItemCategory.BLOCK, "Leaves", ResourceManager.getInstance().getDrawable("leaves"), 64));
-		items.put(ItemType.SWORD.getId(), new SwordItem(ItemType.SWORD, "Fiery Sword", ResourceManager.getInstance().getDrawable("sword"), 1, 6, 1.0f, 50, 1.0f));
+		items.put(ItemType.SWORD.getId(), new SwordItem(ItemType.SWORD, "Fiery Sword", ResourceManager.getInstance().getDrawable("sword"), 1, 6, 1.0f, 50, 100.0f));
 		items.put(ItemType.STICK.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
 		items.put(BlockType.WOOD_CHEST.getId(), new BlockItem(BlockType.WOOD_CHEST, ItemCategory.BLOCK, "Wooden Chest", ResourceManager.getInstance().getDrawable("chest"), 64));
 		items.put(BlockType.COVER_GRASS.getId(), new BlockItem(BlockType.COVER_GRASS, ItemCategory.BLOCK, "Cover Grass", ResourceManager.getInstance().getDrawable("covergrass"), 64));
-		items.put(ItemType.SEED.getId(), new Item(ItemType.SEED.getId(), ItemCategory.MISC, "Seed", ResourceManager.getInstance().getDrawable("seed"), 64));
+		items.put(ItemType.SEED.getId(), new SeedItem(ItemType.SEED.getId(), ItemCategory.MISC, "Seed", ResourceManager.getInstance().getDrawable("seed"), 64, 1.0f));
+		items.put(BlockType.MUSHROOM_BROWN.getId(), new BlockItem(BlockType.MUSHROOM_BROWN, ItemCategory.MISC, "Brown Mushroom", ResourceManager.getInstance().getDrawable("mushroom0"), 64));
+		items.put(BlockType.MUSHROOM_RED.getId(), new BlockItem(BlockType.MUSHROOM_RED, ItemCategory.MISC, "Red Mushroom", ResourceManager.getInstance().getDrawable("mushroom1"), 64));
+		items.put(BlockType.MUSHROOM.getId(), new BlockItem(BlockType.MUSHROOM, ItemCategory.MISC, "Mushroom", ResourceManager.getInstance().getDrawable("mushroom2"), 64));
 	}
 
 	public Item getItem(ItemType type) {

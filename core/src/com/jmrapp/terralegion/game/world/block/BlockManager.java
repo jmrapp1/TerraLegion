@@ -3,6 +3,7 @@ package com.jmrapp.terralegion.game.world.block;
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.game.world.block.impl.ChestBlock;
 import com.jmrapp.terralegion.game.world.block.impl.CoverGrassBlock;
+import com.jmrapp.terralegion.game.world.block.impl.CropBlock;
 import com.jmrapp.terralegion.game.world.block.impl.LightBlock;
 import com.jmrapp.terralegion.game.world.block.impl.WoodBlock;
 
@@ -26,7 +27,11 @@ public class BlockManager {
 		blocks.put(BlockType.WOOD, new WoodBlock(BlockType.WOOD, ResourceManager.getInstance().getDrawable("wood"), .15f, true, true, .6f, .3f));
 		blocks.put(BlockType.LEAVES, new Block(BlockType.LEAVES, ResourceManager.getInstance().getDrawable("leaves"), .15f, true, false, .5f, .1f));
 		blocks.put(BlockType.WOOD_CHEST, new ChestBlock(3, 3, BlockType.WOOD_CHEST, ResourceManager.getInstance().getDrawable("chest"), .15f, true, false, 5f, .1f));
-		blocks.put(BlockType.COVER_GRASS, new CoverGrassBlock());
+		blocks.put(BlockType.COVER_GRASS, new CoverGrassBlock(BlockType.COVER_GRASS, ResourceManager.getInstance().getDrawable("covergrass"), .01f, false, false, .1f, .1f));
+		blocks.put(BlockType.CROP_BLOCK_0, new CropBlock(BlockType.CROP_BLOCK_0, ResourceManager.getInstance().getDrawable("crop0"), 0.1f, false, true, 0.1f, 0.1f));
+		blocks.put(BlockType.MUSHROOM_BROWN, new Block(BlockType.MUSHROOM_BROWN, ResourceManager.getInstance().getDrawable("mushroom0"), .15f, false, false, .5f, .1f));
+		blocks.put(BlockType.MUSHROOM_RED, new Block(BlockType.MUSHROOM_RED, ResourceManager.getInstance().getDrawable("mushroom1"), .15f, false, false, .5f, .1f));
+		blocks.put(BlockType.MUSHROOM, new Block(BlockType.MUSHROOM, ResourceManager.getInstance().getDrawable("mushroom2"), .15f, false, false, .5f, .1f));
 	}
 	
 	public static Block getBlock(BlockType type) {
