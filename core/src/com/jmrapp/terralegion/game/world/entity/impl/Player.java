@@ -8,6 +8,7 @@ import com.jmrapp.terralegion.engine.views.drawables.SpriteSheet;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.game.item.ItemManager;
 import com.jmrapp.terralegion.game.item.ItemStack;
+import com.jmrapp.terralegion.game.item.ItemType;
 import com.jmrapp.terralegion.game.item.inventory.Inventory;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
@@ -25,6 +26,8 @@ public class Player extends LivingEntity {
 		inventory = new Inventory(5, 8);
 
 		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.WOOD_CHEST), 1);
+		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.STOVE), 1);
+		this.inventory.addItemStack(ItemManager.getInstance().getItem(ItemType.FISH), 10);
 	}
 
     private static AnimationDrawable createAnimationDrawable() {

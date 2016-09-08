@@ -151,3 +151,10 @@ mushroom2
        orig: 32, 16
        offset: 0, 0
        index: -1
+stove
+    rotate: false
+       xy: 256, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1

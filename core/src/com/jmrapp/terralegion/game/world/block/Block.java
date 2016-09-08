@@ -32,6 +32,9 @@ public class Block {
 		this.resistance = resistance;
 	}
 
+	/**
+	 * @param camera Should be switched to OrthoCamera
+     */
 	public void render(OrthographicCamera camera, SpriteBatch sb, float x, float y, float lightValue) {
 		float value = lightValue < LightUtils.MIN_LIGHT_VALUE ? LightUtils.MIN_LIGHT_VALUE : lightValue;
 		sb.setColor(value, value, value, 1);
