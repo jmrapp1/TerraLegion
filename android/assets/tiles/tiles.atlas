@@ -158,3 +158,31 @@ stove
        orig: 32, 32
        offset: 0, 0
        index: -1
+sand
+    rotate: false
+       xy: 288, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+cactus
+    rotate: false
+       xy: 320, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+glass
+    rotate: false
+       xy: 352, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+sandWall
+    rotate: false
+       xy: 384, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1

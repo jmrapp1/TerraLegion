@@ -23,11 +23,11 @@ import java.util.Random;
  */
 public class CookableItem extends UsableItem {
 
-    private ItemType returnItem;
+    private int returnItem;
 
     private Random positionRandom;
 
-    public CookableItem(int typeId, ItemType returnItem, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay, float reach){
+    public CookableItem(int typeId, int returnItem, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay, float reach){
         super(typeId, category, name, icon, maxItemStack, useDelay, reach);
         this.returnItem = returnItem;
         positionRandom = new Random();

@@ -15,6 +15,8 @@ import com.jmrapp.terralegion.game.world.chunk.gen.HillGenerator;
 import com.jmrapp.terralegion.game.world.chunk.gen.OreGenerator;
 import com.jmrapp.terralegion.game.utils.Vector2Factory;
 
+import java.util.Random;
+
 public class ChunkManager {
 
 	public static int totalChunksLoaded = 0;
@@ -39,7 +41,11 @@ public class ChunkManager {
 	private SimplexNoise noise = new SimplexNoise();
 
 	private World world;
-	
+
+	private Random random;
+
+	private int sandRarity = 3;
+
 	/**
 	 * Used when loading a new world
 	 * @param world The world instance
@@ -49,6 +55,8 @@ public class ChunkManager {
 		this.world = world;
 		loadSeed(seed);
 		generateTerrain();
+
+		this.random = new Random();
 	}
 	
 	/** Used when loading an existing world. */
@@ -76,7 +84,11 @@ public class ChunkManager {
 			@Override
 			public void run() {*/
 				if(chunk.getStartY() == CHUNKS_Y - 1) { //If it is the top chunk where the hills should be generated
-					hillGenerator.generate(noise, chunk);
+					if(random.nextInt(sandRarity) == 1) {
+						hillGenerator.generateSandy(noise, chunk);
+					}else{
+						hillGenerator.generate(noise, chunk);
+					}
 				} else {
 					oreGenerator.generate(noise, chunk);
 				}

@@ -14,7 +14,7 @@ import com.jmrapp.terralegion.game.world.entity.impl.Bunny;
  */
 public class FishItem extends CookableItem {
 
-    public FishItem(int typeId, ItemType returnItem, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay, float reach){
+    public FishItem(int typeId, int returnItem, ItemCategory category, String name, Drawable icon, int maxItemStack, float useDelay, float reach){
         super(typeId, returnItem, category, name, icon, maxItemStack, useDelay, reach);
     }
 

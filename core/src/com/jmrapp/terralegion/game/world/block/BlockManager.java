@@ -33,6 +33,10 @@ public class BlockManager {
 		blocks.put(BlockType.MUSHROOM_RED, new Block(BlockType.MUSHROOM_RED, ResourceManager.getInstance().getDrawable("mushroom1"), .15f, false, false, .5f, .1f));
 		blocks.put(BlockType.MUSHROOM, new Block(BlockType.MUSHROOM, ResourceManager.getInstance().getDrawable("mushroom2"), .15f, false, false, .5f, .1f));
 		blocks.put(BlockType.STOVE, new Block(BlockType.STOVE, ResourceManager.getInstance().getDrawable("stove"), .1f, false, false, 1, 1f));
+		blocks.put(BlockType.SAND, new Block(BlockType.SAND, ResourceManager.getInstance().getDrawable("sand"), .0f, true, false, .5f, .25f));
+		blocks.put(BlockType.CACTUS, new CoverGrassBlock(BlockType.CACTUS, ResourceManager.getInstance().getDrawable("cactus"), .01f, true, false, .1f, .1f));
+		blocks.put(BlockType.GLASS, new Block(BlockType.GLASS, ResourceManager.getInstance().getDrawable("glass"), .15f, true, false, .1f, .1f));
+		blocks.put(BlockType.SAND_WALL, new Wall(BlockType.SAND_WALL, ResourceManager.getInstance().getDrawable("sandWall"), .5f, .15f));
 	}
 	
 	public static Block getBlock(BlockType type) {
