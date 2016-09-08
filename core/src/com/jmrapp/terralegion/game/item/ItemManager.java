@@ -44,6 +44,8 @@ public class ItemManager {
 		items.put(BlockType.SAND.getId(), new CookableItem(BlockType.SAND.getId(), BlockType.GLASS.getId(), ItemCategory.BLOCK, "Sand", ResourceManager.getInstance().getDrawable("sand"), 64, 1f, 128f));
 		items.put(BlockType.CACTUS.getId(), new BlockItem(BlockType.CACTUS, ItemCategory.BLOCK, "Cactus", ResourceManager.getInstance().getDrawable("cactus"), 64));
 		items.put(BlockType.GLASS.getId(), new BlockItem(BlockType.GLASS, ItemCategory.BLOCK, "Glass", ResourceManager.getInstance().getDrawable("glass"), 64));
+		items.put(BlockType.SAND_STONE.getId(), new CookableItem(BlockType.SAND_STONE.getId(), BlockType.GLASS_HARD.getId(), ItemCategory.BLOCK, "Sand Stone", ResourceManager.getInstance().getDrawable("sandStone"), 64, 1, 128));
+		items.put(BlockType.GLASS_HARD.getId(), new BlockItem(BlockType.GLASS_HARD, ItemCategory.BLOCK, "Tough Glass", ResourceManager.getInstance().getDrawable("glassHard"), 64));
 	}
 
 	public Item getItem(ItemType type) {

@@ -40,6 +40,8 @@ public class DropManager {
         drops.put(BlockType.CACTUS.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.CACTUS), ResourceManager.getInstance().getDrawable("cactus")));
         drops.put(BlockType.GLASS.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.GLASS), ResourceManager.getInstance().getDrawable("glass")));
         drops.put(BlockType.STOVE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.STOVE), ResourceManager.getInstance().getDrawable("stove")));
+        drops.put(BlockType.SAND_STONE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.SAND_STONE), ResourceManager.getInstance().getDrawable("sandStone")));
+        drops.put(BlockType.GLASS_HARD.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.GLASS_HARD), ResourceManager.getInstance().getDrawable("glassHard")));
     }
 
     public Drop getDrop(BlockType type, int stackCount, float x, float y) {

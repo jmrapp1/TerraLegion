@@ -77,8 +77,8 @@ public class HillGenerator implements WorldGenerator {
 					chunk.setBlock(sandyGeneration ? BlockType.SAND : BlockType.DIRT, x, j, false);
 					chunk.setWall(sandyGeneration ? BlockType.SAND_WALL : BlockType.DIRT_WALL, x, j, false);
 				} else {
-					chunk.setBlock(BlockType.STONE, x, j, false);
-					chunk.setWall(BlockType.STONE_WALL, x, j, false);
+					chunk.setBlock(sandyGeneration ? BlockType.SAND_STONE : BlockType.STONE, x, j, false);
+					chunk.setWall(sandyGeneration ? BlockType.SAND_WALL : BlockType.STONE_WALL, x, j, false);
 				}
 			} else {
 				oreGen.generate(noise, chunk, x, j);

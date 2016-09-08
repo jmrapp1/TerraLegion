@@ -186,3 +186,17 @@ sandWall
        orig: 32, 32
        offset: 0, 0
        index: -1
+sandStone
+    rotate: false
+       xy: 416, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+glassHard
+    rotate: false
+       xy: 448, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
