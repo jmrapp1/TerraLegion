@@ -2,6 +2,8 @@ package com.jmrapp.terralegion.game.item;
 
 import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.game.item.impl.BlockItem;
+import com.jmrapp.terralegion.game.item.impl.CookableItem;
+import com.jmrapp.terralegion.game.item.impl.FishItem;
 import com.jmrapp.terralegion.game.item.impl.PickaxeItem;
 import com.jmrapp.terralegion.game.item.impl.SeedItem;
 import com.jmrapp.terralegion.game.item.impl.SwordItem;
@@ -36,6 +38,14 @@ public class ItemManager {
 		items.put(BlockType.MUSHROOM_BROWN.getId(), new BlockItem(BlockType.MUSHROOM_BROWN, ItemCategory.MISC, "Brown Mushroom", ResourceManager.getInstance().getDrawable("mushroom0"), 64));
 		items.put(BlockType.MUSHROOM_RED.getId(), new BlockItem(BlockType.MUSHROOM_RED, ItemCategory.MISC, "Red Mushroom", ResourceManager.getInstance().getDrawable("mushroom1"), 64));
 		items.put(BlockType.MUSHROOM.getId(), new BlockItem(BlockType.MUSHROOM, ItemCategory.MISC, "Mushroom", ResourceManager.getInstance().getDrawable("mushroom2"), 64));
+		items.put(ItemType.FISH.getId(), new FishItem(ItemType.FISH.getId(), ItemType.FISH_COOKED.getId(), ItemCategory.MISC, "Fish", ResourceManager.getInstance().getDrawable("fish"), 64, 1, 128));
+		items.put(ItemType.FISH_COOKED.getId(), new Item(ItemType.FISH_COOKED.getId(), ItemCategory.MISC, "Fish", ResourceManager.getInstance().getDrawable("fish_cooked"), 64));
+		items.put(BlockType.STOVE.getId(), new BlockItem(BlockType.STOVE, ItemCategory.MISC, "Stove", ResourceManager.getInstance().getDrawable("stove"), 64));
+		items.put(BlockType.SAND.getId(), new CookableItem(BlockType.SAND.getId(), BlockType.GLASS.getId(), ItemCategory.BLOCK, "Sand", ResourceManager.getInstance().getDrawable("sand"), 64, 1f, 128f));
+		items.put(BlockType.CACTUS.getId(), new BlockItem(BlockType.CACTUS, ItemCategory.BLOCK, "Cactus", ResourceManager.getInstance().getDrawable("cactus"), 64));
+		items.put(BlockType.GLASS.getId(), new BlockItem(BlockType.GLASS, ItemCategory.BLOCK, "Glass", ResourceManager.getInstance().getDrawable("glass"), 64));
+		items.put(BlockType.SAND_STONE.getId(), new CookableItem(BlockType.SAND_STONE.getId(), BlockType.GLASS_HARD.getId(), ItemCategory.BLOCK, "Sand Stone", ResourceManager.getInstance().getDrawable("sandStone"), 64, 1, 128));
+		items.put(BlockType.GLASS_HARD.getId(), new BlockItem(BlockType.GLASS_HARD, ItemCategory.BLOCK, "Tough Glass", ResourceManager.getInstance().getDrawable("glassHard"), 64));
 	}
 
 	public Item getItem(ItemType type) {

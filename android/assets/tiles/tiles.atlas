@@ -151,3 +151,52 @@ mushroom2
        orig: 32, 16
        offset: 0, 0
        index: -1
+stove
+    rotate: false
+       xy: 256, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+sand
+    rotate: false
+       xy: 288, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+cactus
+    rotate: false
+       xy: 320, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+glass
+    rotate: false
+       xy: 352, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+sandWall
+    rotate: false
+       xy: 384, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+sandStone
+    rotate: false
+       xy: 416, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+glassHard
+    rotate: false
+       xy: 448, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1

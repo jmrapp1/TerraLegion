@@ -24,14 +24,21 @@ public class BlockManager {
 		blocks.put(BlockType.TORCH, new LightBlock(BlockType.TORCH, ResourceManager.getInstance().getDrawable("torch"), .05f, false, 1f, true, .1f, .1f));
 		blocks.put(BlockType.STONE_WALL, new Wall(BlockType.STONE_WALL, ResourceManager.getInstance().getDrawable("stoneWall"), .5f, .15f));
 		blocks.put(BlockType.DIRT_WALL, new Wall(BlockType.DIRT_WALL, ResourceManager.getInstance().getDrawable("dirtWall"), .5f, .15f));
-		blocks.put(BlockType.WOOD, new WoodBlock(BlockType.WOOD, ResourceManager.getInstance().getDrawable("wood"), .15f, true, true, .6f, .3f));
-		blocks.put(BlockType.LEAVES, new Block(BlockType.LEAVES, ResourceManager.getInstance().getDrawable("leaves"), .15f, true, false, .5f, .1f));
+		blocks.put(BlockType.WOOD, new WoodBlock(BlockType.WOOD, ResourceManager.getInstance().getDrawable("wood"), .15f, false, true, .6f, .3f));
+		blocks.put(BlockType.LEAVES, new Block(BlockType.LEAVES, ResourceManager.getInstance().getDrawable("leaves"), .15f, false, false, .5f, .1f));
 		blocks.put(BlockType.WOOD_CHEST, new ChestBlock(3, 3, BlockType.WOOD_CHEST, ResourceManager.getInstance().getDrawable("chest"), .15f, true, false, 5f, .1f));
 		blocks.put(BlockType.COVER_GRASS, new CoverGrassBlock(BlockType.COVER_GRASS, ResourceManager.getInstance().getDrawable("covergrass"), .01f, false, false, .1f, .1f));
 		blocks.put(BlockType.CROP_BLOCK_0, new CropBlock(BlockType.CROP_BLOCK_0, ResourceManager.getInstance().getDrawable("crop0"), 0.1f, false, true, 0.1f, 0.1f));
 		blocks.put(BlockType.MUSHROOM_BROWN, new Block(BlockType.MUSHROOM_BROWN, ResourceManager.getInstance().getDrawable("mushroom0"), .15f, false, false, .5f, .1f));
 		blocks.put(BlockType.MUSHROOM_RED, new Block(BlockType.MUSHROOM_RED, ResourceManager.getInstance().getDrawable("mushroom1"), .15f, false, false, .5f, .1f));
 		blocks.put(BlockType.MUSHROOM, new Block(BlockType.MUSHROOM, ResourceManager.getInstance().getDrawable("mushroom2"), .15f, false, false, .5f, .1f));
+		blocks.put(BlockType.STOVE, new Block(BlockType.STOVE, ResourceManager.getInstance().getDrawable("stove"), .1f, false, false, 1, 1f));
+		blocks.put(BlockType.SAND, new Block(BlockType.SAND, ResourceManager.getInstance().getDrawable("sand"), .0f, true, false, .5f, .25f));
+		blocks.put(BlockType.CACTUS, new CoverGrassBlock(BlockType.CACTUS, ResourceManager.getInstance().getDrawable("cactus"), .01f, false, false, .1f, .1f));
+		blocks.put(BlockType.GLASS, new Block(BlockType.GLASS, ResourceManager.getInstance().getDrawable("glass"), .15f, true, true, .1f, .1f));
+		blocks.put(BlockType.SAND_WALL, new Wall(BlockType.SAND_WALL, ResourceManager.getInstance().getDrawable("sandWall"), .5f, .15f));
+		blocks.put(BlockType.SAND_STONE, new Block(BlockType.SAND_STONE, ResourceManager.getInstance().getDrawable("sandStone"), .15f, true, true, .7f, .35f));
+		blocks.put(BlockType.GLASS_HARD, new Block(BlockType.GLASS_HARD, ResourceManager.getInstance().getDrawable("glassHard"), .15f, true, true, .1f, .5f));
 	}
 	
 	public static Block getBlock(BlockType type) {

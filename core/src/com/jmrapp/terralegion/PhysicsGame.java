@@ -88,6 +88,13 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("mushroom0", atlas, "mushroom0");
         ResourceManager.getInstance().loadAtlasRegionDrawable("mushroom1", atlas, "mushroom1");
         ResourceManager.getInstance().loadAtlasRegionDrawable("mushroom2", atlas, "mushroom2");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("stove", atlas, "stove");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("sand", atlas, "sand");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("cactus", atlas, "cactus");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("glass", atlas, "glass");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("sandWall", atlas, "sandWall");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("sandStone", atlas, "sandStone");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("glassHard", atlas, "glassHard");
 
         atlas = new TextureAtlas(Gdx.files.internal("tiles/drops.atlas"));
         //DROPS
@@ -106,6 +113,8 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadTexturedDrawable("sword", "items/sword.png");
         ResourceManager.getInstance().loadTexturedDrawable("stick", "items/stick.png");
         ResourceManager.getInstance().loadTexturedDrawable("seed", "items/seed.png");
+        ResourceManager.getInstance().loadTexturedDrawable("fish", "items/fish.png");
+        ResourceManager.getInstance().loadTexturedDrawable("fish_cooked", "items/fish_cooked.png");
 
         //FONTS
         ResourceManager.getInstance().loadFont("font", "fonts/source-sans-pro-regular.ttf", Color.WHITE, 20);
