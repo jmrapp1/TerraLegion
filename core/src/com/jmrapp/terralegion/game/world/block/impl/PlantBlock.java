@@ -11,15 +11,15 @@ import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
 
 /**
- * Generates around the map for a source of seeds
+ * Plant blocks are automatically destroyed if the block under them no longer exists
  *
  * Created by jordanb84 on 8/5/16.
  */
-public class CoverGrassBlock extends Block{
+public class PlantBlock extends Block{
 
     private ChunkManager chunkManager;
 
-    public CoverGrassBlock(BlockType type, Drawable drawable, float lightBlockingAmount, boolean collides, boolean transparent, float initHealth, float resistance){
+    public PlantBlock(BlockType type, Drawable drawable, float lightBlockingAmount, boolean collides, boolean transparent, float initHealth, float resistance){
         super(type, drawable, lightBlockingAmount, collides, transparent, initHealth, resistance);
     }
 

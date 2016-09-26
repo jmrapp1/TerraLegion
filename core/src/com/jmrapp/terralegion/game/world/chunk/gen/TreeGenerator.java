@@ -40,7 +40,7 @@ public class TreeGenerator {
             chunk.setBlock(BlockType.LEAVES, x-1, y+stemLength-i, false);
             chunk.setBlock(BlockType.LEAVES, x+1, y+stemLength-i, false);
         }
-        chunk.setBlock(BlockType.LEAVES, x, y+stemLength, false);
+        chunk.setBlock(BlockType.APPLE_LEAVES, x, y+stemLength, false);
 
         if(getRandomNumber(1, 5) == 4){
             chunk.setBlock(MUSHROOMS[getRandomNumber(0, MUSHROOMS.length-1)], x, y+stemLength + 1, false);

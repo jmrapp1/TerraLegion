@@ -38,10 +38,15 @@ public class DropManager {
         drops.put(ItemType.FISH_COOKED.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.FISH_COOKED), ResourceManager.getInstance().getDrawable("fish_cooked")));
         drops.put(BlockType.SAND.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.SAND), ResourceManager.getInstance().getDrawable("sand")));
         drops.put(BlockType.CACTUS.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.CACTUS), ResourceManager.getInstance().getDrawable("cactus")));
+        drops.put(BlockType.CACTUS_WALL.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.CACTUS_WALL), ResourceManager.getInstance().getDrawable("cactusWall")));
         drops.put(BlockType.GLASS.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.GLASS), ResourceManager.getInstance().getDrawable("glass")));
         drops.put(BlockType.STOVE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.STOVE), ResourceManager.getInstance().getDrawable("stove")));
         drops.put(BlockType.SAND_STONE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.SAND_STONE), ResourceManager.getInstance().getDrawable("sandStone")));
         drops.put(BlockType.GLASS_HARD.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.GLASS_HARD), ResourceManager.getInstance().getDrawable("glassHard")));
+        drops.put(BlockType.APPLE_LEAVES.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.APPLE), ResourceManager.getInstance().getDrawable("apple")));
+        drops.put(BlockType.FENCE_WOOD.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.FENCE_WOOD), ResourceManager.getInstance().getDrawable("fence_wood")));
+        drops.put(BlockType.FENCE_STONE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.FENCE_STONE), ResourceManager.getInstance().getDrawable("fence_stone")));
+        drops.put(ItemType.COAL.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.COAL), ResourceManager.getInstance().getDrawable("coal")));
     }
 
     public Drop getDrop(BlockType type, int stackCount, float x, float y) {
