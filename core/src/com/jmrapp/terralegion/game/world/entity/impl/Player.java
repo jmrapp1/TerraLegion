@@ -28,6 +28,8 @@ public class Player extends LivingEntity {
 		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.WOOD_CHEST), 1);
 		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.STOVE), 1);
 		this.inventory.addItemStack(ItemManager.getInstance().getItem(ItemType.FISH), 25);
+		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.FENCE_WOOD), 5);
+		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.FENCE_STONE), 5);
 	}
 
     private static AnimationDrawable createAnimationDrawable() {

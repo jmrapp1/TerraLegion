@@ -5,7 +5,8 @@ public enum ItemCategory {
 	BLOCK(1),
     TOOL(2),
     FURNITURE(3),
-    MISC(4);
+    MISC(4),
+    FOOD(5);
 
 	private final int id;
 

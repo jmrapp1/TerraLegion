@@ -72,7 +72,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("stone", atlas, "stone");
         ResourceManager.getInstance().loadAtlasRegionDrawable("diamond", atlas, "diamond");
         ResourceManager.getInstance().loadAtlasRegionDrawable("torch", atlas, "torch");
-        ResourceManager.getInstance().loadAtlasRegionDrawable("coal", atlas, "coal");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("coalOre", atlas, "coalOre");
         ResourceManager.getInstance().loadAtlasRegionDrawable("stoneWall", atlas, "stoneWall");
         ResourceManager.getInstance().loadAtlasRegionDrawable("dirtWall", atlas, "dirtWall");
         ResourceManager.getInstance().loadAtlasRegionDrawable("leaves", atlas, "leaves");
@@ -95,6 +95,10 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("sandWall", atlas, "sandWall");
         ResourceManager.getInstance().loadAtlasRegionDrawable("sandStone", atlas, "sandStone");
         ResourceManager.getInstance().loadAtlasRegionDrawable("glassHard", atlas, "glassHard");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("appleLeaves", atlas, "appleLeaves");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("cactusWall", atlas, "cactusWall");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("fence_wood", atlas, "fence_wood");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("fence_stone", atlas, "fence_stone");
 
         atlas = new TextureAtlas(Gdx.files.internal("tiles/drops.atlas"));
         //DROPS
@@ -115,6 +119,8 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadTexturedDrawable("seed", "items/seed.png");
         ResourceManager.getInstance().loadTexturedDrawable("fish", "items/fish.png");
         ResourceManager.getInstance().loadTexturedDrawable("fish_cooked", "items/fish_cooked.png");
+        ResourceManager.getInstance().loadTexturedDrawable("apple", "items/apple.png");
+        ResourceManager.getInstance().loadTexturedDrawable("coal", "items/coal.png");
 
         //FONTS
         ResourceManager.getInstance().loadFont("font", "fonts/source-sans-pro-regular.ttf", Color.WHITE, 20);

@@ -20,8 +20,10 @@ public class CraftingRecipes {
 	private HashMap<ItemCategory, Array<CraftingRecipe>> cachedCategoryRecipes = new HashMap<ItemCategory, Array<CraftingRecipe>>();
 
 	public CraftingRecipes() {
-		recipes.put(BlockType.TORCH.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.TORCH), 3), ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.COAL), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 2)));
+		recipes.put(BlockType.TORCH.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.TORCH), 3), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.COAL), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 2)));
 		recipes.put(ItemType.WOODEN_PICKAXE.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.WOODEN_PICKAXE), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 3), ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.STONE), 5)));
+		recipes.put(BlockType.FENCE_WOOD.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.FENCE_WOOD), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 5)));
+		recipes.put(BlockType.FENCE_STONE.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.FENCE_STONE), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.STONE), 5)));
 	}
 
 	/**

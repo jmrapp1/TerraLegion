@@ -11,7 +11,7 @@ blankTile
   orig: 32, 32
   offset: 0, 0
   index: -1
-coal
+coalOre
   rotate: false
   xy: 32, 0
   size: 32, 32
@@ -200,3 +200,31 @@ glassHard
        orig: 32, 32
        offset: 0, 0
        index: -1
+appleLeaves
+    rotate: false
+       xy: 480, 32
+       size: 32, 32
+       orig: 32, 32
+       offset: 0, 0
+       index: -1
+cactusWall
+  rotate: false
+  xy: 416, 0
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fence_wood
+  rotate: false
+  xy: 448, 0
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fence_stone
+  rotate: false
+  xy: 480, 0
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
