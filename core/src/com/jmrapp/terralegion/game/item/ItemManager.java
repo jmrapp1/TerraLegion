@@ -29,10 +29,10 @@ public class ItemManager {
 		items.put(BlockType.DIAMOND.getId(), new BlockItem(BlockType.DIAMOND, ItemCategory.BLOCK, "Diamond Ore", ResourceManager.getInstance().getDrawable("diamond"), 64));
 		items.put(BlockType.COAL.getId(), new CookableItem(BlockType.COAL.getId(), ItemType.COAL.getId(), ItemCategory.BLOCK, "Coal Ore", ResourceManager.getInstance().getDrawable("coalOre"), 64, 1, 128));
 		items.put(ItemType.WOODEN_PICKAXE.getId(), new PickaxeItem(ItemType.WOODEN_PICKAXE, "Wooden Pickaxe", ResourceManager.getInstance().getDrawable("woodenPickaxe"), 1, 4, 1.0f, 100, .5f));
-		//items.put(BlockType.WOOD.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
+		items.put(BlockType.WOOD.getId(), new BlockItem(BlockType.WOOD, ItemCategory.MISC, "Wood", ResourceManager.getInstance().getDrawable("wood"), 64));
 		items.put(BlockType.LEAVES.getId(), new BlockItem(BlockType.LEAVES, ItemCategory.BLOCK, "Leaves", ResourceManager.getInstance().getDrawable("leaves"), 64));
 		items.put(ItemType.SWORD.getId(), new SwordItem(ItemType.SWORD, "Fiery Sword", ResourceManager.getInstance().getDrawable("sword"), 1, 6, 1.0f, 50, 100.0f));
-		items.put(ItemType.STICK.getId(), new Item(ItemType.STICK.getId(), ItemCategory.MISC, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
+		items.put(ItemType.STICK.getId(), new Item(ItemType.STICK.getId(), ItemCategory.TOOL, "Stick", ResourceManager.getInstance().getDrawable("stick"), 64));
 		items.put(BlockType.WOOD_CHEST.getId(), new BlockItem(BlockType.WOOD_CHEST, ItemCategory.BLOCK, "Wooden Chest", ResourceManager.getInstance().getDrawable("chest"), 64));
 		items.put(BlockType.COVER_GRASS.getId(), new BlockItem(BlockType.COVER_GRASS, ItemCategory.BLOCK, "Cover Grass", ResourceManager.getInstance().getDrawable("covergrass"), 64));
 		items.put(ItemType.SEED.getId(), new SeedItem(ItemType.SEED.getId(), ItemCategory.MISC, "Seed", ResourceManager.getInstance().getDrawable("seed"), 64, 1.0f));
