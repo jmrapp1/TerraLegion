@@ -24,6 +24,7 @@ public class CraftingRecipes {
 		recipes.put(ItemType.WOODEN_PICKAXE.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.WOODEN_PICKAXE), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 3), ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.STONE), 5)));
 		recipes.put(BlockType.FENCE_WOOD.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.FENCE_WOOD), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 5)));
 		recipes.put(BlockType.FENCE_STONE.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.FENCE_STONE), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.STONE), 5)));
+		recipes.put(ItemType.STICK.getId(), new CraftingRecipe(ItemStack.getItemStack(ItemManager.getInstance().getItem(ItemType.STICK), 1), ItemStack.getItemStack(ItemManager.getInstance().getItem(BlockType.WOOD), 1)));
 	}
 
 	/**
