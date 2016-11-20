@@ -14,6 +14,7 @@ import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
 import com.jmrapp.terralegion.game.world.entity.impl.Bunny;
+import com.jmrapp.terralegion.game.world.entity.impl.Hedgehog;
 import com.jmrapp.terralegion.game.world.entity.impl.Player;
 
 public class World {
@@ -47,6 +48,10 @@ public class World {
 			bunny = new Bunny(player.getX(), player.getY());
 			chunk1.addEntity(bunny);
 			physicsWorld.setGravityToEntity(bunny);
+
+			Hedgehog hedgehog = new Hedgehog(player.getX(), player.getY());
+			chunk1.addEntity(hedgehog);
+			physicsWorld.setGravityToEntity(hedgehog);
 		}
 	}
 	
