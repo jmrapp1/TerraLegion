@@ -6,6 +6,7 @@ import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.TexturedDrawable;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.game.world.entity.FriendlyEntity;
+import com.jmrapp.terralegion.game.world.entity.ai.impl.PeacefulWanderingMind;
 
 /**
  * Created by Jon on 12/19/15.
@@ -16,26 +17,13 @@ public class Bunny extends FriendlyEntity {
 	private float moveX = 0;
 
 	public Bunny(float x, float y) {
-		super(new TexturedDrawable(ResourceManager.getInstance().getTexture("bunny")), x, y, BodyType.DYNAMIC, 7f, 10, 7, 3.5f);
+		super(new TexturedDrawable(ResourceManager.getInstance().getTexture("bunny")), x, y, BodyType.DYNAMIC, 7f, 10, 7, 3.5f, null);
+		this.setEntityMind(new PeacefulWanderingMind(this, true));
 	}
 
 	@Override
 	public void update() {
-		if (Timer.getGameTimeElapsed() - lastDirectionChange > 4) {
-			if (MathUtils.random(1, 100) > 50) {
-				moveX = -speed;
-				lastDirectionChange = Timer.getGameTimeElapsed();
-			} else {
-				moveX = speed;
-				lastDirectionChange = Timer.getGameTimeElapsed();
-			}
-		}
-		if (MathUtils.random(1, 100) < 20) {
-			if (canJump()) {
-				jump();
-			}
-		}
-		addVelocity(moveX, 0);
+		super.update();
 	}
 
 }

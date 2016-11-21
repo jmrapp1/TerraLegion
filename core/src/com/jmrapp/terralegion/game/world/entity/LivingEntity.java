@@ -13,6 +13,7 @@ import com.jmrapp.terralegion.engine.world.entity.WorldBody;
 import com.jmrapp.terralegion.game.item.impl.ToolItem;
 import com.jmrapp.terralegion.game.item.impl.UsableItem;
 import com.jmrapp.terralegion.game.utils.LightUtils;
+import com.jmrapp.terralegion.game.world.entity.ai.EntityMind;
 
 /**
  * Created by Jon on 12/21/15.
@@ -30,11 +31,14 @@ public abstract class LivingEntity extends TexturedEntity {
 	private float health, maxHealth, jumpVelocity;
 	private float lastToolUsedTime, lastDamageReceived = Timer.getGameTimeElapsed();
 
-	public LivingEntity(Drawable drawable, float x, float y, BodyType bodyType, float speed, float maxHealth, float health, float jumpVelocity) {
+	private EntityMind entityMind;
+
+	public LivingEntity(Drawable drawable, float x, float y, BodyType bodyType, float speed, float maxHealth, float health, float jumpVelocity, EntityMind entityMind) {
 		super(drawable, x, y, bodyType, speed);
 		this.health = health;
 		this.maxHealth = maxHealth;
 		this.jumpVelocity = jumpVelocity;
+		this.entityMind = entityMind;
 	}
 
 	@Override
@@ -62,6 +66,13 @@ public abstract class LivingEntity extends TexturedEntity {
 
 	public boolean isDead() {
 		return health <= 0;
+	}
+
+	@Override
+	public void update(){
+		if(this.entityMind != null) {
+			this.entityMind.update();
+		}
 	}
 
 	@Override
@@ -155,4 +166,8 @@ public abstract class LivingEntity extends TexturedEntity {
         }
         super.addVelocity(x, y);
     }
+
+	public void setEntityMind(EntityMind entityMind){
+		this.entityMind = entityMind;
+	}
 }
