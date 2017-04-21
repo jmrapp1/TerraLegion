@@ -4,7 +4,6 @@ import com.jmrapp.terralegion.engine.views.drawables.ResourceManager;
 import com.jmrapp.terralegion.engine.views.drawables.TexturedDrawable;
 import com.jmrapp.terralegion.engine.world.entity.BodyType;
 import com.jmrapp.terralegion.game.world.entity.FriendlyEntity;
-import com.jmrapp.terralegion.game.world.entity.ai.impl.PeacefulWanderingMind;
 
 /**
  * Created by root on 11/19/16.
@@ -12,12 +11,6 @@ import com.jmrapp.terralegion.game.world.entity.ai.impl.PeacefulWanderingMind;
 public class Hedgehog extends FriendlyEntity {
 
     public Hedgehog(float x, float y){
-        super(new TexturedDrawable(ResourceManager.getInstance().getTexture("hedgehog")), x, y, BodyType.DYNAMIC, 7f, 10, 7, 3.5f, null);
-        this.setEntityMind(new PeacefulWanderingMind(this, true));
-    }
-
-    @Override
-    public void update() {
-        super.update();
-    }
+        super(new TexturedDrawable(ResourceManager.getInstance().getTexture("hedgehog")), x, y, BodyType.DYNAMIC, 7f, 10, 7, 3.5f);
+     }
 }

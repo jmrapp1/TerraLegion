@@ -1,0 +1,1 @@
+Download the Java Behavior Tree (JBT) editor from its Github: https://github.com/gaia-ucm/jbt

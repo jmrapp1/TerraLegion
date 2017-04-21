@@ -22,7 +22,7 @@ public class Player extends LivingEntity {
 	private final float walkingVelocity = 12f;
 
 	public Player(float x, float y) {
-		super(createAnimationDrawable(), x, y, BodyType.DYNAMIC, 12f, 100, 100, 6.5f, null);
+		super(createAnimationDrawable(), x, y, BodyType.DYNAMIC, 12f, 100, 100, 6.5f);
 		inventory = new Inventory(5, 8);
 
 		this.inventory.addItemStack(ItemManager.getInstance().getItem(BlockType.WOOD_CHEST), 1);

@@ -44,14 +44,14 @@ public class World {
 		WorldIO.saveWorld(this);
 
 		Chunk chunk1 = chunkManager.getChunkFromPos(player.getX(), player.getY());
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 1; i++) {
 			bunny = new Bunny(player.getX(), player.getY());
 			chunk1.addEntity(bunny);
 			physicsWorld.setGravityToEntity(bunny);
 
-			Hedgehog hedgehog = new Hedgehog(player.getX(), player.getY());
-			chunk1.addEntity(hedgehog);
-			physicsWorld.setGravityToEntity(hedgehog);
+			//Hedgehog hedgehog = new Hedgehog(player.getX(), player.getY());
+			//chunk1.addEntity(hedgehog);
+			//physicsWorld.setGravityToEntity(hedgehog);
 		}
 	}
 	
@@ -79,8 +79,12 @@ public class World {
 		physicsWorld.updateWorldBody(player);
 		physicsWorld.focusCamera(player, Settings.getWidth(), Settings.getHeight(), 50000, 50000, camera);
 		chunkManager.updateChunks(physicsWorld, player.getX(), player.getY());
-		if (Gdx.input.isKeyJustPressed(Input.Keys.J))
-			player.forcePosition(bunny.getX(), bunny.getY());
+		if (Gdx.input.isKeyJustPressed(Input.Keys.J)) {
+			Chunk chunk1 = chunkManager.getChunkFromPos(player.getX(), player.getY());
+			bunny = new Bunny(player.getX(), player.getY());
+			chunk1.addEntity(bunny);
+			physicsWorld.setGravityToEntity(bunny);
+		}
 		DayManager.getInstance().update();
 	}
 	

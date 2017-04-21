@@ -41,7 +41,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadTexture("rightBtn", "ui/rightBtn.png");
         ResourceManager.getInstance().loadTexture("upBtn", "ui/upBtn.png");
         ResourceManager.getInstance().loadTexture("bunny", "entities/bunny.png");
-        ResourceManager.getInstance().loadTexture("hedgehog", "entities/hedgehog.png");
+        ResourceManager.getInstance().loadTexture("hedgehog", "entities/bunny.png"); //Jordan didn't push hedgehog, waiting.
 
         //UI
         ResourceManager.getInstance().loadTexture("inventoryBox", "ui/inventoryBox.png");

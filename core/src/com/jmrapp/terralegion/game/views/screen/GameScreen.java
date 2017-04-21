@@ -17,7 +17,7 @@ public class GameScreen implements Screen {
 
 	private OrthoCamera camera;
 	private ShaderProgram program;
-	private World world;
+	private static World world;
 	private GameHud gameHud;
 	
 	public GameScreen(String worldFileName) {
@@ -100,6 +100,10 @@ public class GameScreen implements Screen {
 	public void resume() {
 		gameHud.resume();
 		Timer.startGameTime();
+	}
+
+	public static World getCurrentWorld() { //Terribly ugly, but short term needed for AI behavior testing
+		return world;
 	}
 
 }

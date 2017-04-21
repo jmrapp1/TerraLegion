@@ -1,0 +1,63 @@
+<Domain package="movement">
+	
+	<!-- actions and sensors may have input parameters -->
+	<!-- < Parameter > element has two attributes, its name and its type -->
+
+	<!-- MMPM supports the following types for parameter types: OBJECT, FLOAT, BOOLEAN,
+		 STRING, INTEGER, DIRECTION, COORDINATE, PLAYER, ENTITY_ID and ENTITY_TYPE -->
+	
+	<ActionSet>
+	<!-- defines the set of actions that are present in the game -->
+	<!-- contains a sequence of < Action > elements, each one being an action -->
+	<!-- An < Action > element has one attribute, its name (which is called name). -->
+		<Action name="moveLeft" >
+			<Parameter name="entity" type="OBJECT" />
+		</Action>
+		<Action name="moveRight" >
+			<Parameter name="entity" type="OBJECT" />
+		</Action>
+		
+		<Action name="moveSlightly">
+			<Parameter name="entity" type="OBJECT" />
+			<Parameter name="direction" type="DIRECTION" /> <!-- 1 = left, 2 = right -->
+			<Parameter name="time" type="FLOAT" />
+		</Action>
+		
+		<Action name="jumpLeft" >
+			<Parameter name="entity" type="OBJECT" />
+		</Action>
+		<Action name="jumpRight" >
+			<Parameter name="entity" type="OBJECT" />
+		</Action>
+	</ActionSet>
+	
+	<SensorSet>
+	<!-- Defines the set of sensors that can be used in the game -->
+	<!-- Contains a sequence of < Sensor > elements -->
+	<!-- A < Sensor > element has two attributes: its name and its type. -->
+	<!-- A sensor is an operation that queries something about the world -->
+		<Sensor name="blocked" type="BOOLEAN">
+			<Parameter name="entity" type="OBJECT" />
+			<Parameter name="direction" type="DIRECTION" /> <!-- 1 = left, 2 = right -->
+		</Sensor>
+		
+		<Sensor name="canJump" type="BOOLEAN">
+			<Parameter name="entity" type="OBJECT" />
+			<Parameter name="direction" type="DIRECTION" /> <!-- 1 = left, 2 = right -->
+		</Sensor>
+		
+		<Sensor name="tryBackupJump" type="BOOLEAN">
+			<Parameter name="entity" type="OBJECT" />
+			<Parameter name="direction" type="DIRECTION" /> <!-- 1 = left, 2 = right -->
+		</Sensor>
+		
+	</SensorSet>
+	
+	<GoalSet>
+	<!-- Goals declaration -->
+	</GoalSet>
+	
+	<EntitySet>
+	<!-- Entities declaration -->
+	</EntitySet>
+</Domain>

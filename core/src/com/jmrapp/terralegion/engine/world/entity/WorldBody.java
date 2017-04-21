@@ -12,7 +12,7 @@ public abstract class WorldBody {
 	protected Rectangle bound, leftBound, rightBound, topBound, bottomBound, desiredBound, topDesiredBound, bottomDesiredBound;
 	
 	public WorldBody() {
-		leftBound = new Rectangle(); //nah that's not it.
+		leftBound = new Rectangle();
 		rightBound = new Rectangle();
 		topBound = new Rectangle();
 		bottomBound = new Rectangle();

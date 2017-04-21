@@ -9,7 +9,7 @@ import com.jmrapp.terralegion.engine.world.entity.BodyType;
 public abstract class HostileEntity extends LivingEntity {
 
 	public HostileEntity(Drawable drawable, float x, float y, BodyType bodyType, float speed, float maxHealth, float health, float jumpVelocity) {
-		super(drawable, x, y, bodyType, speed, maxHealth, health, jumpVelocity, null);
+		super(drawable, x, y, bodyType, speed, maxHealth, health, jumpVelocity);
 	}
 
 }

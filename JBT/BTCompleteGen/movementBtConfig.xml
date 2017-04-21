@@ -1,0 +1,14 @@
+<Configuration>
+	<BTLibrary>
+		<BTFile>movement.xbt</BTFile>
+		
+		<LibraryClassName>MovementBT</LibraryClassName>
+		<LibraryPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.bt</LibraryPackage>
+		<LibraryOutputDirectory>bt</LibraryOutputDirectory>
+		
+		<DomainFile>movement.xml</DomainFile>
+		<ModelActionsPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.models</ModelActionsPackage>
+		<ModelConditionsPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.models</ModelConditionsPackage>
+	</BTLibrary>
+	
+</Configuration>

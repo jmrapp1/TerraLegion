@@ -60,6 +60,9 @@ nb-configuration.xml
 build/
 $ANDROID_SDK/
 
+JBT/JBTEditor/
+JBT/BTCompleteGen/Project/
+
 ## OS Specific
 .DS_Store
 Thumbs.db

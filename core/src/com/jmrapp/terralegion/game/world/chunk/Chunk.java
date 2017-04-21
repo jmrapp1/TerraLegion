@@ -86,13 +86,13 @@ public class Chunk {
 	}
 
 	public void update(OrthoCamera camera, float centerX, float centerY) {
-		for (TexturedEntity obj : entities) {
-			if (obj instanceof Drop) {
-				Drop drop = (Drop) obj;
-				if (ChunkManager.isOnScreen(obj.getX(), obj.getY(), camera, centerX, centerY)) {
+		for (TexturedEntity entity : entities) {
+			if (entity instanceof Drop) {
+				Drop drop = (Drop) entity;
+				if (ChunkManager.isOnScreen(entity.getX(), entity.getY(), camera, centerX, centerY)) {
 					if (blockBrokenFlag || (!blockBrokenFlag && !drop.onGround())) {
 						drop.resetOnGround();
-						chunkManager.getWorld().getPhysicsWorld().updateWorldBody(obj);
+						chunkManager.getWorld().getPhysicsWorld().updateWorldBody(entity);
 					}
 					if (chunkManager.getWorld().getPlayer().getBounds().overlaps(drop.getBounds())) {
 						if (drop.canPickup()) {
@@ -101,13 +101,15 @@ public class Chunk {
 					}
 				}
 				drop.checkDeathTime(this);
-			} else if (obj instanceof LivingEntity) {
-				chunkManager.getWorld().getPhysicsWorld().updateWorldBody(obj);
-				if (((LivingEntity) obj).isDead())
-					entities.removeValue(obj, false);
+			} else if (entity instanceof LivingEntity) {
+				chunkManager.getWorld().getPhysicsWorld().updateWorldBody(entity);
+				entity.update();
+				if (((LivingEntity) entity).isDead()) {
+					entities.removeValue(entity, false);
+				}
 			} else {
-				if (ChunkManager.isOnScreen(obj.getX(), obj.getY(), camera, centerX, centerY)) {
-					chunkManager.getWorld().getPhysicsWorld().updateWorldBody(obj);
+				if (ChunkManager.isOnScreen(entity.getX(), entity.getY(), camera, centerX, centerY)) {
+					chunkManager.getWorld().getPhysicsWorld().updateWorldBody(entity);
 				}
 			}
 		}
@@ -184,6 +186,15 @@ public class Chunk {
 			foundEntities.set(i + 1, entity1);    // Put the key in its proper location
 		}
 		return foundEntities;
+	}
+
+	public TexturedEntity getEntity(String id) {
+		for (TexturedEntity entity : entities) {
+			if (entity.toString().equals(id)) {
+				return entity;
+			}
+		}
+		return null;
 	}
 
 	public int getStartX() {

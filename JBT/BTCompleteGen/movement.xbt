@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tree>
+  <Node id="Node_0" name="Movement" type="Root">
+    <Children>
+      <Node id="Node_1" type="Repeat">
+        <Children>
+          <Node id="Node_2" type="Selector">
+            <Children>
+              <Node id="Node_42" type="Inverter">
+                <Children>
+                  <Node id="Node_40" type="UntilFail">
+                    <Children>
+                      <Node id="Node_3" type="Selector">
+                        <Children>
+                          <Node id="Node_13" type="Sequence">
+                            <Children>
+                              <Node id="Node_17" type="Inverter">
+                                <Children>
+                                  <Node id="Node_18" name="blocked" type="Condition">
+                                    <Parameters>
+                                      <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                      <Parameter name="direction" fromcontext="false">1</Parameter>
+                                    </Parameters>
+                                  </Node>
+                                </Children>
+                              </Node>
+                              <Node id="Node_19" name="moveLeft" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                </Parameters>
+                              </Node>
+                            </Children>
+                          </Node>
+                          <Node id="Node_14" type="Sequence">
+                            <Children>
+                              <Node id="Node_23" name="canJump" type="Condition">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                  <Parameter name="direction" fromcontext="false">1</Parameter>
+                                </Parameters>
+                              </Node>
+                              <Node id="Node_24" name="jumpLeft" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                </Parameters>
+                              </Node>
+                            </Children>
+                          </Node>
+                          <Node id="Node_27" type="Sequence">
+                            <Children>
+                              <Node id="Node_28" name="tryBackupJump" type="Condition">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                  <Parameter name="direction" fromcontext="false">1</Parameter>
+                                </Parameters>
+                              </Node>
+                              <Node id="Node_29" name="moveSlightly" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                  <Parameter name="direction" fromcontext="false">2</Parameter>
+                                  <Parameter name="time" fromcontext="false">0.5</Parameter>
+                                </Parameters>
+                              </Node>
+                              <Node id="Node_30" name="jumpLeft" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                </Parameters>
+                              </Node>
+                            </Children>
+                          </Node>
+                        </Children>
+                      </Node>
+                    </Children>
+                  </Node>
+                </Children>
+              </Node>
+              <Node id="Node_43" type="Inverter">
+                <Children>
+                  <Node id="Node_41" type="UntilFail">
+                    <Children>
+                      <Node id="Node_4" type="Selector">
+                        <Children>
+                          <Node id="Node_15" type="Sequence">
+                            <Children>
+                              <Node id="Node_20" type="Inverter">
+                                <Children>
+                                  <Node id="Node_21" name="blocked" type="Condition">
+                                    <Parameters>
+                                      <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                      <Parameter name="direction" fromcontext="false">2</Parameter>
+                                    </Parameters>
+                                  </Node>
+                                </Children>
+                              </Node>
+                              <Node id="Node_22" name="moveRight" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                </Parameters>
+                              </Node>
+                            </Children>
+                          </Node>
+                          <Node id="Node_16" type="Sequence">
+                            <Children>
+                              <Node id="Node_25" name="canJump" type="Condition">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                  <Parameter name="direction" fromcontext="false">2</Parameter>
+                                </Parameters>
+                              </Node>
+                              <Node id="Node_26" name="jumpRight" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                </Parameters>
+                              </Node>
+                            </Children>
+                          </Node>
+                          <Node id="Node_31" type="Sequence">
+                            <Children>
+                              <Node id="Node_32" name="tryBackupJump" type="Condition">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                  <Parameter name="direction" fromcontext="false">2</Parameter>
+                                </Parameters>
+                              </Node>
+                              <Node id="Node_33" name="moveSlightly" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                  <Parameter name="direction" fromcontext="false">1</Parameter>
+                                  <Parameter name="time" fromcontext="false">0.5</Parameter>
+                                </Parameters>
+                              </Node>
+                              <Node id="Node_34" name="jumpRight" type="Action">
+                                <Parameters>
+                                  <Parameter name="entity" fromcontext="true">texturedEntity</Parameter>
+                                </Parameters>
+                              </Node>
+                            </Children>
+                          </Node>
+                        </Children>
+                      </Node>
+                    </Children>
+                  </Node>
+                </Children>
+              </Node>
+            </Children>
+          </Node>
+        </Children>
+      </Node>
+    </Children>
+  </Node>
+</Tree>
+

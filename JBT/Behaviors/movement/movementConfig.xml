@@ -1,0 +1,14 @@
+<Configuration>
+	<DomainFile>movement.xml</DomainFile>
+
+	<ModelActionsPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.models</ModelActionsPackage>
+	<ModelConditionsPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.models</ModelConditionsPackage>
+	<ModelActionsOutputDirectory>models</ModelActionsOutputDirectory>
+	<ModelConditionsOutputDirectory>models</ModelConditionsOutputDirectory>
+	
+	<ExecutionActionsPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.executions</ExecutionActionsPackage>
+	<ExecutionConditionsPackage>com.jmrapp.terralegion.game.world.entity.behaviors.movement.executions</ExecutionConditionsPackage>
+	<ExecutionActionsOutputDirectory>executions</ExecutionActionsOutputDirectory>
+	<ExecutionConditionsOutputDirectory>executions</ExecutionConditionsOutputDirectory>
+	
+</Configuration>
