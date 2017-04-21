@@ -102,12 +102,7 @@ public class BlockedAction extends
 	}
 
 	protected void internalSpawn() {
-		/*
-		 * Do not remove this first line unless you know what it does and you
-		 * need not do it.
-		 */
-		this.getExecutor().requestInsertionIntoList(
-				jbt.execution.core.BTExecutor.BTExecutorList.TICKABLE, this);
+		this.getExecutor().requestInsertionIntoList(jbt.execution.core.BTExecutor.BTExecutorList.TICKABLE, this);
 		System.out.println("BlockedAction " + getDirection() + " spawned");
 	}
 
@@ -116,8 +111,8 @@ public class BlockedAction extends
 		int tX = ChunkManager.pixelToTilePosition(livingEntity.getX());
 		int tY = ChunkManager.pixelToTilePosition(livingEntity.getY());
 		Chunk chunk = GameScreen.getCurrentWorld().getChunkManager().getChunkFromTilePos(tX, tY);
-		tX %= 50; //Get relative to chunk
-		tY %= 50; //Get relative to chunk
+		tX %= Chunk.CHUNK_SIZE; //Get relative to chunk
+		tY %= Chunk.CHUNK_SIZE; //Get relative to chunk
 		int direction = (getDirection() == 1 ? -1 : 1);
 		if (chunk.getBlock(tX + direction, tY) != BlockType.AIR) {
 			System.out.println("BlockedAction " + getDirection() + " IS BLOCKED");

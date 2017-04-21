@@ -17,6 +17,7 @@ import com.jmrapp.terralegion.game.world.entity.LivingEntity;
 import com.jmrapp.terralegion.game.world.entity.TexturedEntity;
 import com.jmrapp.terralegion.game.utils.LightUtils;
 import com.jmrapp.terralegion.game.utils.Vector2Factory;
+import javafx.scene.effect.Light;
 
 public class Chunk {
 
@@ -292,10 +293,15 @@ public class Chunk {
 	 */
 	public boolean findHighestTile(int x) {
 		for (int y = CHUNK_SIZE - 1; y >= highestBlocks[x]; y--) { //Go down the column up till the current highest tile
-			if (blocks[x][y] != null && blocks[x][y] != BlockType.AIR) {
-				//Find the height difference from the last tile found and compare the difference.
-				//<TODO compare the height of the tile next to it />
-				highestBlocks[x] = MathUtils.clamp(y + 1, 0, Chunk.CHUNK_SIZE - 1);
+			BlockType type = blocks[x][y];
+			if (type != null && type != BlockType.AIR) {
+				//<TODO compare the height of the tile next to it (may not be needed anymore) />
+				if (BlockManager.getBlock(type).collides()) {
+					highestBlocks[x] = MathUtils.clamp(y + 1, 0, Chunk.CHUNK_SIZE - 1);
+				} else {
+					setLightValue(1f, x, y); //Set higher transparent blocks to have 1f light
+					continue;
+				}
 				return true;
 			}
 		}
@@ -314,7 +320,11 @@ public class Chunk {
 	 * @param x The column to calculate on
 	 */
 	private void calculateSun(int x) {
-		LightUtils.calculateChunkLightDown(chunkManager, x + (startX * CHUNK_SIZE), highestBlocks[x] + (startY * CHUNK_SIZE), 1f + BlockManager.getBlock(blocks[x][highestBlocks[x]]).getLightBlockingAmount());
+		int highestY = highestBlocks[x];
+		float lightValue = lightMap[x][highestY];
+		if (lightValue <= .7f) {
+			LightUtils.calculateChunkLight(chunkManager, x + (startX * CHUNK_SIZE), highestY + (startY * CHUNK_SIZE), 1f + BlockManager.getBlock(blocks[x][highestY]).getLightBlockingAmount(), false);
+		}
 	}
 	
 	public int getHighestTile(int x) {
