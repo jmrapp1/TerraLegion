@@ -50,8 +50,8 @@ public class ItemManager {
 		items.put(ItemType.APPLE.getId(), new Item(ItemType.APPLE.getId(), ItemCategory.FOOD, "Apple", ResourceManager.getInstance().getDrawable("apple"), 64));
 		items.put(ItemType.COAL.getId(), new Item(ItemType.COAL.getId(), ItemCategory.MISC, "Coal", ResourceManager.getInstance().getDrawable("coal"), 64));
 		items.put(BlockType.CACTUS_WALL.getId(), new BlockItem(BlockType.CACTUS_WALL, ItemCategory.BLOCK, "Cactus Wall", ResourceManager.getInstance().getDrawable("cactusWall"), 64));
-		items.put(BlockType.FENCE_WOOD.getId(), new BlockItem(BlockType.FENCE_WOOD, ItemCategory.FURNITURE, "Wooden Fence", ResourceManager.getInstance().getDrawable("fence_wood"), 64));
-		items.put(BlockType.FENCE_STONE.getId(), new BlockItem(BlockType.FENCE_STONE, ItemCategory.FURNITURE, "Stone Fence", ResourceManager.getInstance().getDrawable("fence_stone"), 64));
+		items.put(BlockType.FENCE_WOOD.getId(), new BlockItem(BlockType.FENCE_WOOD, ItemCategory.FURNITURE, "Wooden Fence", ResourceManager.getInstance().getDrawable("fenceWood"), 64));
+		items.put(BlockType.FENCE_STONE.getId(), new BlockItem(BlockType.FENCE_STONE, ItemCategory.FURNITURE, "Stone Fence", ResourceManager.getInstance().getDrawable("fenceStone"), 64));
 	}
 
 	public Item getItem(ItemType type) {

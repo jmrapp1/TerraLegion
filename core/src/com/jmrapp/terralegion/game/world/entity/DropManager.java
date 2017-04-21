@@ -44,8 +44,8 @@ public class DropManager {
         drops.put(BlockType.SAND_STONE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.SAND_STONE), ResourceManager.getInstance().getDrawable("sandStone")));
         drops.put(BlockType.GLASS_HARD.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.GLASS_HARD), ResourceManager.getInstance().getDrawable("glassHard")));
         drops.put(BlockType.APPLE_LEAVES.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.APPLE), ResourceManager.getInstance().getDrawable("apple")));
-        drops.put(BlockType.FENCE_WOOD.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.FENCE_WOOD), ResourceManager.getInstance().getDrawable("fence_wood")));
-        drops.put(BlockType.FENCE_STONE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.FENCE_STONE), ResourceManager.getInstance().getDrawable("fence_stone")));
+        drops.put(BlockType.FENCE_WOOD.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.FENCE_WOOD), ResourceManager.getInstance().getDrawable("fenceWood")));
+        drops.put(BlockType.FENCE_STONE.getId(), new Drop(ItemManager.getInstance().getItem(BlockType.FENCE_STONE), ResourceManager.getInstance().getDrawable("fenceStone")));
         drops.put(ItemType.COAL.getId(), new Drop(ItemManager.getInstance().getItem(ItemType.COAL), ResourceManager.getInstance().getDrawable("coal")));
     }
 

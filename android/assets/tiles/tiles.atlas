@@ -1,229 +1,214 @@
 
 tiles.png
-size: 512,64
 format: RGBA8888
-filter: Nearest,Nearest
+filter: Linear,Nearest
 repeat: none
+appleLeaves
+  rotate: false
+  xy: 1, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 blankTile
   rotate: false
-  xy: 0, 0
+  xy: 35, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-coalOre
+cactus
   rotate: false
-  xy: 32, 0
+  xy: 69, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-diamond
+cactusWall
   rotate: false
-  xy: 64, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-dirt
-  rotate: false
-  xy: 96, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-dirtWall
-  rotate: false
-  xy: 128, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-dummyTile
-  rotate: false
-  xy: 160, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-grass
-  rotate: false
-  xy: 192, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-leaves
-  rotate: false
-  xy: 224, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-stone
-  rotate: false
-  xy: 256, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-stoneWall
-  rotate: false
-  xy: 288, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-torch
-  rotate: false
-  xy: 320, 0
-  size: 32, 32
-  orig: 32, 32
-  offset: 0, 0
-  index: -1
-wood
-  rotate: false
-  xy: 352, 0
+  xy: 103, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 chest
   rotate: false
-  xy: 384, 0
+  xy: 137, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+coalOre
+  rotate: false
+  xy: 171, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 covergrass
-    rotate: false
-       xy: 0, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
+  rotate: false
+  xy: 205, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 crop0
-    rotate: false
-       xy: 32, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
+  rotate: false
+  xy: 239, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 crop1
-    rotate: false
-       xy: 64, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
+  rotate: false
+  xy: 273, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 crop2
-    rotate: false
-       xy: 96, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
+  rotate: false
+  xy: 307, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 crop3
-    rotate: false
-       xy: 128, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-mushroom0
-    rotate: false
-       xy: 160, 48
-       size: 32, 16
-       orig: 32, 16
-       offset: 0, 0
-       index: -1
-mushroom1
-    rotate: false
-       xy: 192, 48
-       size: 32, 16
-       orig: 32, 16
-       offset: 0, 0
-       index: -1
-mushroom2
-    rotate: false
-       xy: 224, 48
-       size: 32, 16
-       orig: 32, 16
-       offset: 0, 0
-       index: -1
-stove
-    rotate: false
-       xy: 256, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-sand
-    rotate: false
-       xy: 288, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-cactus
-    rotate: false
-       xy: 320, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
+  rotate: false
+  xy: 341, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+diamond
+  rotate: false
+  xy: 375, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+dirt
+  rotate: false
+  xy: 409, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+dirtWall
+  rotate: false
+  xy: 443, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fenceStone
+  rotate: false
+  xy: 477, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+fenceWood
+  rotate: false
+  xy: 511, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 glass
-    rotate: false
-       xy: 352, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-sandWall
-    rotate: false
-       xy: 384, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-sandStone
-    rotate: false
-       xy: 416, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
+  rotate: false
+  xy: 545, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
 glassHard
-    rotate: false
-       xy: 448, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-appleLeaves
-    rotate: false
-       xy: 480, 32
-       size: 32, 32
-       orig: 32, 32
-       offset: 0, 0
-       index: -1
-cactusWall
   rotate: false
-  xy: 416, 0
+  xy: 579, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-fence_wood
+grass
   rotate: false
-  xy: 448, 0
+  xy: 613, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
-fence_stone
+greysand
   rotate: false
-  xy: 480, 0
+  xy: 647, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+leaves
+  rotate: false
+  xy: 681, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+mushroom0
+  rotate: false
+  xy: 715, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+mushroom1
+  rotate: false
+  xy: 749, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+mushroom2
+  rotate: false
+  xy: 783, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+sand
+  rotate: false
+  xy: 817, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stone
+  rotate: false
+  xy: 851, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stoneWall
+  rotate: false
+  xy: 885, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+stove
+  rotate: false
+  xy: 919, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+torch
+  rotate: false
+  xy: 953, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+wood
+  rotate: false
+  xy: 987, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0

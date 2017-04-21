@@ -41,8 +41,8 @@ public class BlockManager {
 		blocks.put(BlockType.GLASS_HARD, new Block(BlockType.GLASS_HARD, ResourceManager.getInstance().getDrawable("glassHard"), .15f, true, true, .1f, .5f));
 		blocks.put(BlockType.APPLE_LEAVES, new Block(BlockType.APPLE_LEAVES, ResourceManager.getInstance().getDrawable("appleLeaves"), .15f, false, false, .5f, .1f));
 		blocks.put(BlockType.CACTUS_WALL, new Wall(BlockType.CACTUS_WALL, ResourceManager.getInstance().getDrawable("cactusWall"), 1f, .1f));
-		blocks.put(BlockType.FENCE_WOOD, new Block(BlockType.FENCE_WOOD, ResourceManager.getInstance().getDrawable("fence_wood"), .15f, false, true, .7f, .35f));
-		blocks.put(BlockType.FENCE_STONE, new Block(BlockType.FENCE_STONE, ResourceManager.getInstance().getDrawable("fence_stone"), .15f, false, true, .7f, .35f));
+		blocks.put(BlockType.FENCE_WOOD, new Block(BlockType.FENCE_WOOD, ResourceManager.getInstance().getDrawable("fenceWood"), .15f, false, true, .7f, .35f));
+		blocks.put(BlockType.FENCE_STONE, new Block(BlockType.FENCE_STONE, ResourceManager.getInstance().getDrawable("fenceStone"), .15f, false, true, .7f, .35f));
 	}
 	
 	public static Block getBlock(BlockType type) {

@@ -78,7 +78,7 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("dirtWall", atlas, "dirtWall");
         ResourceManager.getInstance().loadAtlasRegionDrawable("leaves", atlas, "leaves");
         ResourceManager.getInstance().loadAtlasRegionDrawable("wood", atlas, "wood");
-        ResourceManager.getInstance().loadAtlasRegionDrawable("dummyTile", atlas, "dummyTile");
+        //ResourceManager.getInstance().loadAtlasRegionDrawable("dummyTile", atlas, "dummyTile");
         ResourceManager.getInstance().loadAtlasRegionDrawable("blankTile", atlas, "blankTile");
         ResourceManager.getInstance().loadAtlasRegionDrawable("chest", atlas, "chest");
         ResourceManager.getInstance().loadAtlasRegionDrawable("covergrass", atlas, "covergrass");
@@ -98,8 +98,8 @@ public class PhysicsGame implements ApplicationListener {
         ResourceManager.getInstance().loadAtlasRegionDrawable("glassHard", atlas, "glassHard");
         ResourceManager.getInstance().loadAtlasRegionDrawable("appleLeaves", atlas, "appleLeaves");
         ResourceManager.getInstance().loadAtlasRegionDrawable("cactusWall", atlas, "cactusWall");
-        ResourceManager.getInstance().loadAtlasRegionDrawable("fence_wood", atlas, "fence_wood");
-        ResourceManager.getInstance().loadAtlasRegionDrawable("fence_stone", atlas, "fence_stone");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("fenceWood", atlas, "fenceWood");
+        ResourceManager.getInstance().loadAtlasRegionDrawable("fenceStone", atlas, "fenceStone");
 
         atlas = new TextureAtlas(Gdx.files.internal("tiles/drops.atlas"));
         //DROPS
