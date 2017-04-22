@@ -9,6 +9,7 @@
 package com.jmrapp.terralegion.game.world.entity.behaviors.movement.executions;
 
 import com.jmrapp.terralegion.game.views.screen.GameScreen;
+import com.jmrapp.terralegion.game.world.block.BlockManager;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
@@ -122,7 +123,8 @@ public class CanJumpAction extends
 		tX %= 50; //Get relative to chunk
 		tY %= 50; //Get relative to chunk
 		int direction = (getDirection() == 1 ? -1 : 1);
-		if (chunk.getBlock(tX + direction, tY + 1) != BlockType.AIR)
+		BlockType type = chunk.getBlock(tX + direction, tY + 1);
+		if (type != null && BlockManager.getBlock(type).collides())
 			return Status.FAILURE;
 		return Status.SUCCESS;
 	}

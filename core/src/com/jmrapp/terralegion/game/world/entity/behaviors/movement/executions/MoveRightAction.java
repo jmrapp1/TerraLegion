@@ -9,6 +9,7 @@
 package com.jmrapp.terralegion.game.world.entity.behaviors.movement.executions;
 
 import com.jmrapp.terralegion.game.views.screen.GameScreen;
+import com.jmrapp.terralegion.game.world.block.BlockManager;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
@@ -84,7 +85,8 @@ public class MoveRightAction extends jbt.execution.task.leaf.action.ExecutionAct
 		Chunk chunk = GameScreen.getCurrentWorld().getChunkManager().getChunkFromTilePos(tX, tY);
 		tX %= 50; //Get relative to chunk
 		tY %= 50; //Get relative to chunk
-		if (chunk.getBlock(tX + 1, tY) == BlockType.AIR) {
+		BlockType type = chunk.getBlock(tX + 1, tY);
+		if (type != null && !BlockManager.getBlock(type).collides()) {
 			livingEntity.addVelocity(4, 0);
 			return Status.RUNNING;
 		}

@@ -9,6 +9,7 @@
 package com.jmrapp.terralegion.game.world.entity.behaviors.movement.executions;
 
 import com.jmrapp.terralegion.game.views.screen.GameScreen;
+import com.jmrapp.terralegion.game.world.block.BlockManager;
 import com.jmrapp.terralegion.game.world.block.BlockType;
 import com.jmrapp.terralegion.game.world.chunk.Chunk;
 import com.jmrapp.terralegion.game.world.chunk.ChunkManager;
@@ -114,7 +115,8 @@ public class BlockedAction extends
 		tX %= Chunk.CHUNK_SIZE; //Get relative to chunk
 		tY %= Chunk.CHUNK_SIZE; //Get relative to chunk
 		int direction = (getDirection() == 1 ? -1 : 1);
-		if (chunk.getBlock(tX + direction, tY) != BlockType.AIR) {
+		BlockType type = chunk.getBlock(tX + direction, tY);
+		if (type != null && BlockManager.getBlock(type).collides()) {
 			System.out.println("BlockedAction " + getDirection() + " IS BLOCKED");
 			return Status.SUCCESS;
 		}
