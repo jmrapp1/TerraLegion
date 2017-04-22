@@ -45,9 +45,9 @@ public class World {
 
 		Chunk chunk1 = chunkManager.getChunkFromPos(player.getX(), player.getY());
 		for (int i = 0; i < 1; i++) {
-			bunny = new Bunny(player.getX(), player.getY());
-			chunk1.addEntity(bunny);
-			physicsWorld.setGravityToEntity(bunny);
+			//bunny = new Bunny(player.getX(), player.getY());
+			//chunk1.addEntity(bunny);
+			//physicsWorld.setGravityToEntity(bunny);
 
 			//Hedgehog hedgehog = new Hedgehog(player.getX(), player.getY());
 			//chunk1.addEntity(hedgehog);
