@@ -2,7 +2,7 @@
 
 A clone of the popular game, Terraria, developed using Java and the LibGDX framework. The reason that this project is open-source is to encourage community contributions and create a game centered around the development done by those in the gaming community. Contributions are heavily welcomed and I would love to see developers being able to place their own mark on the game. The name "TerraLegion" was heavily influenced by the idea of community contributions. "Terra" making a reference to "Terraria", the inspiration of this game, and "Legion" referring to the army of developers behind it.
 
-![](https://cloud.githubusercontent.com/assets/7306503/17391892/7f93f3f2-59ce-11e6-8e88-9a50d4074c0c.png)
+![](http://image.prntscr.com/image/7493f6f08d274468ba90a5f925d32243.png)
 
 ### Contributing
 When adding your own features to the game or modifying existing code, there are a few things to keep in mind to ensure that your pull requests are accepted. Before submitting new additions, be sure to reference the list below as it may be modified in the future.
@@ -48,7 +48,7 @@ https://www.youtube.com/watch?v=-z4o8CwJR8E
 
 **Images**
 
-![](https://cloud.githubusercontent.com/assets/7306503/17391892/7f93f3f2-59ce-11e6-8e88-9a50d4074c0c.png)
+![](http://image.prntscr.com/image/7493f6f08d274468ba90a5f925d32243.png)
 ![](https://cloud.githubusercontent.com/assets/7306503/17390271/5988fdaa-59c0-11e6-9000-9f74783870ce.png)
 
 ### License
