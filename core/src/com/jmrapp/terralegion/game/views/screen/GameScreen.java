@@ -9,6 +9,7 @@ import com.jmrapp.terralegion.engine.camera.OrthoCamera;
 import com.jmrapp.terralegion.engine.utils.Settings;
 import com.jmrapp.terralegion.engine.utils.Timer;
 import com.jmrapp.terralegion.engine.views.screens.Screen;
+import com.jmrapp.terralegion.engine.views.screens.ScreenManager;
 import com.jmrapp.terralegion.game.io.WorldIO;
 import com.jmrapp.terralegion.game.views.ui.GameHud;
 import com.jmrapp.terralegion.game.world.World;
@@ -52,6 +53,10 @@ public class GameScreen implements Screen {
 		if (Gdx.input.isKeyJustPressed(Keys.I)) {
 			System.out.println("Saving");
 			WorldIO.saveWorld(world);
+		} else if (Gdx.input.isKeyJustPressed(Keys.ESCAPE)) {
+			System.out.println("Saving");
+			WorldIO.saveWorld(world);
+			ScreenManager.goBack();
 		}
 
 		world.update(camera);
