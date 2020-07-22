@@ -17,7 +17,6 @@ import com.jmrapp.terralegion.game.world.entity.LivingEntity;
 import com.jmrapp.terralegion.game.world.entity.TexturedEntity;
 import com.jmrapp.terralegion.game.utils.LightUtils;
 import com.jmrapp.terralegion.game.utils.Vector2Factory;
-import javafx.scene.effect.Light;
 
 public class Chunk {
 

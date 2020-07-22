@@ -68,7 +68,7 @@ public class ResourceManager {
 	public BitmapFont getFont(String id, String fileFNT, String filePNG, Color color, float scale) {
 		BitmapFont font = new BitmapFont(Gdx.files.internal(fileFNT),Gdx.files.internal(filePNG),false);
 		font.setColor(color);
-		font.setScale(scale);
+		font.getData().setScale(scale);
 		return font;
 	}
 	

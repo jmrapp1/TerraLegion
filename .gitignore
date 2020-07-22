@@ -17,6 +17,8 @@ gwt-unitCache/
 www-test/
 .gwt-tmp/
 
+**/gradle/*
+
 ## Android Studio and Intellij and Android in general
 android/libs/armeabi/
 android/libs/armeabi-v7a/
